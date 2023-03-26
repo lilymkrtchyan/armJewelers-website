@@ -323,10 +323,10 @@ FPREIGN KEY (product_id) REFERENCES products(id)
 Table: tags
 
 - id: INTEGER {NN, PK, AI, U},
-- tag_material: TEXT {NN},
-- tag_stone: TEXT {},
-- tag_sale: INTEGER {},
-- tag_type: INTEGER {NN},
+- material: TEXT {NN},
+- stone: TEXT {},
+- sale: INTEGER {},
+- type: INTEGER {NN},
 
 PRIMARY KEY (id)
 
