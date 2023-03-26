@@ -88,31 +88,47 @@ persona's face:
 
 ![Ashkhen's face](ashkhen.jpg)
 
+The photo is downloaded from Pinterest.
+
 persona name: Ashkhen
 
 **Factors that Influence Behavior:**
 
 summary of the persona's factors that influence their behavior (1-2 bullet points):
 
-Ashkhen is ethnically Armenian but has been living in the United States since she was a child. Her family is from Armenia and they have been talking to her about her culture and nationality which she has had very limited exposure to. She goes to a university. She loves new fashion trends and she is obsessed with jewevely. She is interested in everything can connects her to her culture and nationality/ethnicity.
+- Ashkhen is ethnically Armenian but has been living in the United States since she was a child.
+- Her family is from Armenia and they have been talking to her about her culture and nationality which she has had very limited exposure to.
+- She goes to a university.
+- She loves new fashion trends and she is obsessed with jewevely.
+- She is interested in everything can connects her to her culture and nationality/ethnicity.
 
 **Goals:**
 
 summary of persona's goals (1-2 bullet points):
 
-Ashkhen wants to buy jewelery pieces that are connected to her past experiences or her ancestors. She wants to buy jewelery for herself and probably for her siblings/friends. She has a limited budget so she is sensitive about prices. Most importantly, Ashkhen wants to recconect to her culture and learn more about Armenia and Armenian culture. Everything from Armenian history to modern cultural references excite her amd interest her.
+- Ashkhen wants to buy jewelery pieces that are connected to her past experiences or her ancestors.
+- She wants to buy jewelery for herself and probably for her siblings/friends.
+- She has a limited budget so she is sensitive about prices.
+- Most importantly, Ashkhen wants to recconect to her culture and learn more about Armenia and Armenian culture.
+- Everything from Armenian history to modern cultural references excite her amd interest her.
 
 **Obstacles:**
 
 summary of persona's obstacles (1-2 bullet points):
 
-Ashkhen knows very little Armenian hence the language of the website has to be primarily in English or needs to be translated. The prices have to offordable for her because she has a limited budget as a university student. The delivery should be accessible because she cannot travel to buy/take the product. The jewelery pieces need to be suitable to her taste and fashion style even though they are Armenian and she has been raised in the US.
+- Ashkhen knows very little Armenian hence the language of the website has to be primarily in English or needs to be translated.
+- The prices have to offordable for her because she has a limited budget as a university student.
+- The delivery should be accessible because she cannot travel to buy/take the product.
+- The jewelery pieces need to be suitable to her taste and fashion style even though they are Armenian and she has been raised in the US.
 
 **Desires:**
 
 summary of persona's desires (1-2 bullet points):
 
-She desires to find jewevely pieces for herself that would complement her style in fashion, would be offordable to buy, would connect her to her culture/nationality, and would highlight her identity when she wears them. Additionally, she would like to buy jewelery for her Armenian siblings/friends as a gift because she things that those jewelery pieces would be very nice and personalized gifts and she desires to see gift suitable features. She wants the delivery to be accessible as she doesn't have an option to leave her university to pick up the jewelery. And additionally, she would love to share her culture with her non-Armenian friends as well who know little to nothing about the country.
+- She desires to find jewevely pieces for herself that would complement her style in fashion, would be offordable to buy, would connect her to her culture/nationality, and would highlight her identity when she wears them.
+- Additionally, she would like to buy jewelery for her Armenian siblings/friends as a gift because she things that those jewelery pieces would be very nice and personalized gifts and she desires to see gift suitable features.
+- She wants the delivery to be accessible as she doesn't have an option to leave her university to pick up the jewelery.
+- And additionally, she would love to share her culture with her non-Armenian friends as well who know little to nothing about the country.
 
 
 ### _Administrator_ Audience (Milestone 1)
@@ -160,34 +176,78 @@ Goal 3: Break into the international market
 > Use the goals you identified above to develop a persona of your site's _administrator_ audience.
 > Your persona must have a name and a face. The face can be a photo of a face or a drawing, etc.
 
-TODO: persona's face
+persona's face:
 
-TODO: persona name
+![Jeweler's face](sevan.jpeg)
+The photo is taken from Armenian news outlet "Arevelq" is features a well-known jeweler.
+
+persona name: Sevan
 
 **Factors that Influence Behavior:**
 
-TODO: summary of the persona's factors that influence their behavior (1-2 bullet points)
+summary of the persona's factors that influence their behavior (1-2 bullet points):
+
+- Sevan's personal style and brand. Many jewelers have their own unique style.
+- What is popular in the market. Across with his own personal style, Sevan also want to stay in trend and be of demand, hence they also consider what is going on in the market and what is trendy and popular.
+- Sevan consideres the prices of materials because if his costs of making the jewelery piece are high than he will end up with less profit from selling the piece.
 
 **Goals:**
 
-TODO: summary of persona's goals (1-2 bullet points)
+summary of persona's goals (1-2 bullet points)
+
+- Sevan wants to get recognized for his hard work and brand.
+- Sevan wants to make more profit by selling as many jewelery pieces as possible.
 
 **Obstacles:**
 
-TODO: summary of persona's obstacles (1-2 bullet points)
+summary of persona's obstacles (1-2 bullet points)
+
+- Sevan might not be recognized among people (especially diaspora Armenians) and hence he doesn't really have his audience.
+- Sevan is not used to using technology so he cannot do his own marketing and branding but he has a very clear idea of what his brand image is.
+- Sevan doesn't speak any other languages (especially English) other than Armenian and Russian
 
 **Desires:**
 
-TODO: summary of persona's desires (1-2 bullet points)
+summary of persona's desires (1-2 bullet points):
+
+- Jewelery making is Sevan's only means for making revenue and providing for his family. Therefore, he needs to earn enough money to be able to provide for himself and probably his wife and children.
+- Sevan wants to maintain his brand image.
 
 
 ### Catalog Data (Milestone 1)
 > Using your personas, identify the data you need to include in the catalog for your site's audiences.
 > Justify why this data aligns with your persona's goals. (1 sentence)
 
-TODO: list the data your persona will need to effectively use the catalog
+list the data your persona will need to effectively use the catalog:
 
-TODO: Justify why this data aids the persona with their goals.
+- Jewelery images
+- Name of the jewelery
+- Description per each jewelery
+- Jewelerer
+- Price per jewelery
+- Jewelery stone (if applicable)
+- Jewelery material (ex: silver, gold)
+- If discounted
+- Jewelery type (ring, bracelet, necklace, earing, etc)
+- Jeweler description
+- Rating per jewevery
+- Comment(s) per jewelery
+- If user hearted
+
+Justify why this data aids the persona with their goals.
+
+- The jewelery images show how the jewelery looks for Ashkhen to see if she likes the appearance of the piece.
+- The jewelery description shows the meaning/story behind the jewelery and its connection to Armenian history and culture.
+- The price shows how affordable the jewelery piece is for Ashkhen
+- The jewelery stone and material add more to the description and show how valuable/costy the materials are in the jewelery
+- The jewelery type allows Ashkhen to look at the jewelery type that she is interested in and sort through everything while not wasting her time and effort on those jewelery types that she doesn't want to see and read about.
+- The discount shows if Ashkhen can buy the jewelery cheaper than the actual price. While filtering, Ashkhen might want to look at those kewelery pieces that are discounted.
+- The jeweler would show which jeweler does the piece belong to, in case Ashkhen is familiar with the brand.
+- The jeweler description will showcase Sevan't brand and style.
+- The rating per jewelery would indicate to Ashkhen how other users' liked the jewelery piece and would highlight Sevan's hard work.
+- The comments will further elaborate why other users liked or disliked a certain piece of jewelery.
+- When Ashkhen hearts a piece of jewelery it is easier for her to find that pieces later.
+- Each piece of jewelery has to have a name to be able to get easily differentiated from and recognized among other pieces.
 
 
 
@@ -203,14 +263,32 @@ TODO: Justify why this data aids the persona with their goals.
 > Provide a brief explanation _underneath_ each sketch. (1 sentence)
 > **Refer to your persona by name in each explanation.**
 
-TODO: sketch(es) + explanation
+sketch(es) + explanation:
 
+![The home page](home.jpg)
+The home page shows some parts of some of the collections and allows Ashkhen to choose to see more if she desires. This is to show what the website has to offer and show some of the variety that the collections represent. The home page of the website will also include information about Armenia and some of the symbols of Armenia for Ashkhen to later recognize those hostiry and culture sumbols in the pieces. The home page also has a navigation bar from where Ashkhen can choose to go either to the page where all the collections and products and showcased, or to navigate to the login page, to her account, her wishlist, or the cart page.
+
+![All products page](all_products.jpg)
+This page shows all the products and all the filters that Ashkhen can filter by.
+
+![Sevan's profile page](administrator_profile.jpg)
+This page shows the account page that Sevan will have. He has all the statistics in terms of graphs of how he's doing in his jewelery sells as well as an insert form where he can insert all the information for a new jewelery piece. He will need to insert all the necessary information for a piece, which would be the image(s), the name of the jewelery, description, the material and store of the jewelery, the price, etc.
+
+![Ashkhen's profile](customer_profile.jpg)
+This page shows Ashkhen all her heated products that are added to her wishlist page in her account.
+
+![Log in page](login.jpg)
+This is the login page that differentiates the interfaces between the Sevan and Ashkhen. They will have to insert their email address and password in order to login.
+
+![Product details page](product_details.jpg)
+This page will show all the details about the product if Ashkhen chooses to see them. The page will include the image of the product, or the tambnail of several images if there are many images. It will include the information about the material and the stone, the general description of the product, as well as the information about the jeweler - Sevan, for example. It will show the ranking of the product and all the comments and will allow Ashkhen to also leave a comment and a ranking.
 
 ### Catalog Design Patterns (Milestone 1)
 > Explain how you used design patterns in your site's design. (1-2 sentences)
 
-TODO: design pattern explanation
+design pattern explanation:
 
+I have used blocks for each product to showcase the image of the product and its essential information, such as its name and the price. I have used a navigation bar from where Ashkhen can go to the all products page or navigate back to the main page or go to her profile, etc. In the page where all the products will be displayed, I have used a sidebar to allow Ashkhen to filter the products. I have created different profiles and a login page for different audiences.
 
 ## Implementation Plan (Milestone 1, Milestone 2, Milestone 3, Final Submission)
 
@@ -219,11 +297,66 @@ TODO: design pattern explanation
 > A bulleted list is probably the simplest way to do this.
 > Make sure you include constraints for each field.
 
-Table: TODO: table name
+Table: products
 
-- field1: TYPE {constraints...},
-- field2...
-- TODO: table fields + type + constraints
+- id: INTEGER {NN, PK, AI, U},
+- product_name: TEXT {NN},
+- product_description: TEXT {},
+- product_price: INTEGER {NN},
+- Jeweler_id: INTEGER {NN},
+- product_image:
+- product_rating: INTEGER {NN}
+
+PRIMARY KEY (id)
+FOREIGN KEY (jeweler_id) REFERENCES jewelers(id)
+
+Table: product_tags
+
+- id: INTEGER {NN, PK, AI, U},
+- tag_id: INTEGER {NN, FK},
+- product_id: INTEGER {NN, FK}
+
+PRIMARY KEY (id)
+FOREIGN KEY (tag_id) REFERENCES tags(id)
+FPREIGN KEY (product_id) REFERENCES products(id)
+
+Table: tags
+
+- id: INTEGER {NN, PK, AI, U},
+- tag_material: TEXT {NN},
+- tag_stone: TEXT {},
+- tag_sale: INTEGER {},
+- tag_type: INTEGER {NN},
+
+PRIMARY KEY (id)
+
+Table: jewelers
+- id: INTEGER {NN, PK, AI, U},
+- jeweler_name: TEXT {NN},
+- jeweler_description: TEXT {NN}
+
+PRIMARY KEY (id)
+
+Table: users
+- id: INTEGER {NN, PK, AI, U},
+- username: TEXT {NN},
+- product_id: INTEGER
+
+PRIMARY KEY (id)
+FOREIGN KEY (product_id) REFERENCES products(id)
+
+Table: comments
+
+- id: INTEGER {NN, PK, AI, U},
+- comment_rating: INTEGER {NN},
+- comment: TEXT,
+- product_id: INTEGER {NN, FK},
+- user_id: INTEGER {NN, FK}
+
+PRIMARY KEY (id)
+FOREIGN KEY (product_id) REFERENCES products(id)
+FOREIGN KEY (user_id) REFERENCES users(id)
+
 
 
 ### Database Query Plan (Milestone 1, Milestone 2, Milestone 3, Final Submission)
@@ -231,7 +364,9 @@ Table: TODO: table name
 > You may use natural language, pseudocode, or SQL.
 
 ```
-TODO: Plan a query
+Plan a query:
+
+SELECT * products INNER JOIN product_tags ON (product_tags.product_id = products.id) INNER JOIN tags ON (product_tags.tag_id = tags.id)
 ```
 
 ```
