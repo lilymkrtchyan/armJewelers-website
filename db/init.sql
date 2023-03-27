@@ -51,6 +51,7 @@ CREATE TABLE tags(
 CREATE TABLE jewelers(
     id INTEGER NOT NULL UNIQUE,
     jeweler_name TEXT NOT NULL,
+    jeweler_password TEXT NOT NULL,
     jeweler_description TEXT,
     PRIMARY KEY (id AUTOINCREMENT)
 );
@@ -59,6 +60,7 @@ CREATE TABLE jewelers(
 CREATE TABLE users(
     id INTEGER NOT NULL UNIQUE,
     username TEXT NOT NULL,
+    user_password TEXT NOT NULL,
     product_id INTEGER,
     PRIMARY KEY (id AUTOINCREMENT)
     FOREIGN KEY (product_id) REFERENCES products(id)
@@ -161,15 +163,15 @@ VALUES
 
 --- Insert Im Zardy to jewelers table ---
 INSERT INTO
-    jewelers (id, jeweler_name, jeweler_description)
+    jewelers (id, jeweler_name, jeweler_password, jeweler_description)
 VALUES
-    (1, "Im Zardy", "'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.");
+    (1, "Im Zardy", 'ImZardy123' , "'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.");
 
 --- Insert Protest Handmade into jewelers table ---
 INSERT INTO
-    jewelers (id, jeweler_name, jeweler_description)
+    jewelers (id, jeweler_name, jeweler_password , jeweler_description)
 VALUES
-    (2, "Protest Handmade", "SILVER and LEATHER cool accessories with the best quality! Cause In such ugly times, the only true protest is beauty.");
+    (2, "Protest Handmade", 'Protest888' , "SILVER and LEATHER cool accessories with the best quality! Cause In such ugly times, the only true protest is beauty.");
 
 
 --- Insert data into tags table ---
@@ -345,3 +347,16 @@ INSERT INTO
     product_tags (id, product_id, tag_id)
 VALUES
     (13, 13, 13);
+
+--- Insert seed data to users ---
+INSERT INTO
+    users (id, username, user_password, product_id)
+VALUES
+    (1, 'lilymkrtchyan', 'lm688' , 10);
+
+--- Insert seed data into comments ---
+--- lilymkrtchyan comment to Syuniq Belt ---
+INSERT INTO
+    comments (id, comment_rating, body, product_id, user_id)
+VALUES
+    (1, 5, "My favorite Armenian accessory!", 10, 1);
