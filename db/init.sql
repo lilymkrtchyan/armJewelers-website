@@ -10,6 +10,23 @@ CREATE TABLE products(
     FOREIGN KEY (jeweler_id) REFERENCES jewelers(id)
 );
 
+-- tag materials
+-- 1 - silver
+-- 2 - gold
+-- 3 - other
+
+-- tag sale
+-- 1 - no discount
+-- 2 - discounted
+
+-- tag type
+-- 1 - ring
+-- 2 - necklace
+-- 3 - bracelet
+-- 4 - belt
+-- 5 - earing
+-- 6 - brooch
+
 --- product tags table ---
 CREATE TABLE product_tags(
     id INTEGER NOT NULL UNIQUE,
@@ -153,3 +170,97 @@ INSERT INTO
     jewelers (id, jeweler_name, jeweler_description)
 VALUES
     (2, "Protest Handmade", "SILVER and LEATHER cool accessories with the best quality! Cause In such ugly times, the only true protest is beauty.");
+
+
+--- Insert data into tags table ---
+
+--- Insert tags for Berd ---
+--- id 1, silver, no sale, ring ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (1, 1, 1, 1);
+
+--- Insert tags for Armenian Girl Bracelet ---
+--- id 2, silver, no sale, bracelet ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (2, 1, 1, 3);
+
+--- Insert tags for The Mount Ararat ---
+--- id 3, silver, no sale, necklace ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (3, 1, 1, 2);
+
+--- Insert tags for Nazeni (Armenian girl earing) ---
+--- id 4, silver, no sale, earing ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (4, 1, 1, 5);
+
+--- Insert tags for Nakhshun (Armenian girl necklace) ---
+--- id 5, silver, no sale, necklace ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (5, 1, 1, 2);
+
+--- Insert tags for crave paintings ---
+--- id 6, silver, no sale, ring ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (6, 1, 1, 1);
+
+--- Insert tags for infinity brooch ---
+--- id 7, silver, no sale, brooch ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (7, 1, 1, 6);
+
+--- Insert tags for alphabet earing---
+--- id 8, silver, no sale, earing ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (8, 1, 1, 5);
+
+--- Insert tags for Surb Gevord ring---
+--- id 9, silver, no sale, ring ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (9, 1, 1, 1);
+
+--- Insert tags for Syuniq Belt---
+--- id 10, silver, no sale, belt ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (10, 1, 1, 4);
+
+--- Insert tags for Yarkhushta Ring---
+--- id 11, silver, no sale, ring ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (11, 1, 1, 1);
+
+--- Insert tags for My Yerevan necklace protest---
+--- id 12, silver, no sale, necklace ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (12, 1, 1, 2);
+
+--- Insert tags for Yerevan ring---
+--- id 13, silver, no sale, ring ---
+INSERT INTO
+    tags (id, material, sale, tag_type)
+VALUES
+    (13, 1, 1, 1);
