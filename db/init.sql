@@ -264,3 +264,84 @@ INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
     (13, 1, 1, 1);
+
+
+--- Insert seed data into product_tags ---
+
+--- Insert seed data for All the tags for Berd ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (1, 1, 1);
+
+--- Insert seed data for All the tags for Armenian girl bracelet ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (2, 2, 2);
+
+--- Insert seed data for All the tags for The Mount Ararat ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (3, 3, 3);
+
+--- Insert seed data for All the tags for Nazeni ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (4, 4, 4);
+
+--- Insert seed data for All the tags for Nakhshun ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (5, 5, 5);
+
+--- Insert seed data for All the tags for Crave Paintings ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (6, 6, 6);
+
+--- Insert seed data for All the tags for Infinity Brooch ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (7, 7, 7);
+
+--- Insert seed data for All the tags for Alphabet earing ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (8, 8, 8);
+
+--- Insert seed data for All the tags for Surb Gevord ring ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (9, 9, 9);
+
+--- Insert seed data for All the tags for Syuniq belt ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (10, 10, 10);
+
+--- Insert seed data for All the tags for Yarkhushta ring ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (11, 11, 11);
+
+--- Insert seed data for All the tags for My Yerevan necklace ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (12, 12, 12);
+
+--- Insert seed data for All the tags for Yerevan ring ---
+INSERT INTO
+    product_tags (id, product_id, tag_id)
+VALUES
+    (13, 13, 13);
