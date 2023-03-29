@@ -2,3 +2,75 @@ img {
     width: 40%;
     height: 40%;
 }
+
+.details-name-price{
+    display: flex;
+    flex-direction: row;
+}
+
+.image-description{
+    display: flex;
+    flex-direction: row;
+}
+
+.product-descriptions{
+    flex-direction: column;
+}
+
+nav {
+    display:flex;
+    flex-direction: row;
+    border-radius: 3px;
+    background-color: brown;
+    border-width: 3px;
+    border-style: solid;
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+nav ul li{
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+
+
+.product-price{
+    margin-left: 10px;
+}
+
+body {
+    background-image: url("/../public/images/armo_carpet.jpg");
+}
+
+p, h2, h1, h3 {
+    border-radius: 2px;
+    border-style: solid;
+    background-color: whitesmoke;
+}
+
+a {
+    color: white;
+    list-style: none;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+.rating-stars{
+    color: white;
+}
+
+label, .jewelery-type-label{
+    color: white;
+    font-weight: 100;
+}
+
+form {
+    background-color: brown;
+    width: 30%;
+}

@@ -11,7 +11,32 @@
 
 <body>
 
-  <h1>Details for your product!</h1>
+<nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/details">Details</a></li>
+      <li><a href="/account">Account</a></li>
+    </ul>
+  </nav>
+
+<h1>Details for your product!</h1>
+
+
+  <div class="details-name-price">
+    <h2> Berd </h2>
+    <h2 class="product-price">$20</h2>
+  </div>
+
+<div class="image-description">
+  <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
+  <div class="product-descriptions">
+    <h3>Metal: Silver</h3>
+    <h3>Description:</h3>
+    <p>The Armenian Berd Dance is a beautiful and captivating folk dance that has been a part of Armenian culture for centuries. This traditional dance is named after the ancient Armenian city of Berd, and it is known for its high energy, dynamic movements, and powerful rhythms. The Berd Dance is typically performed by a group of dancers, who move in a circular formation, with the lead dancer leading the way. The dancers move their feet quickly and gracefully, with the music driving their movements. The dance is accompanied by traditional Armenian music, featuring instruments like the duduk, dhol, and zurna.</p>
+    <h3>Jeweler:</h3>
+    <p>'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.</p>
+    </div>
+</div>
 
 </body>
 

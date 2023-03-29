@@ -63,25 +63,36 @@ const RATING = array(
         <div class="all-products">
 
         <div class="one-product">
-            <?php echo htmlspecialchars($record['product_name']); ?></th>
+          <p>
+            <?php echo htmlspecialchars($record
+            ['product_name']); ?></th>
+          </p>
         </div>
 
         <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
 
         <div class="one-product">
+          <p>
             <?php echo htmlspecialchars($record['product_description']); ?>
+          </p>
         </div>
 
         <div class="one-product">
+          <p>
             <?php echo htmlspecialchars($record['product_price']); ?>
+          </p>
         </div>
 
         <div class="one-product">
+          <div class="rating-stars">
              <?php echo htmlspecialchars(RATING[$record['product_rating']]); ?>
+          </div>
         </div>
 
         <div class="one-product">
+          <p>
               <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?>
+          </p>
         </div>
 
 </div>
