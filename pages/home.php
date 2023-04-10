@@ -2,10 +2,6 @@
 
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
-const JEWELER = array(
-  1 => 'Im Zardy',
-  2 => 'Protest Handmade'
-);
 
 const TYPE = array(
   1 => 'Ring',
@@ -24,6 +20,7 @@ const RATING = array(
   4 => '★★★★☆',
   5 => '★★★★★'
 );
+
 
 ?>
 
@@ -49,7 +46,6 @@ const RATING = array(
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/details">Details</a></li>
         <li><a href="/account">Account</a></li>
       </ul>
     </nav>

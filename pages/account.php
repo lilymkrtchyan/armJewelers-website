@@ -11,13 +11,16 @@
 
 <body>
 
-<nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/details">Details</a></li>
-      <li><a href="/account">Account</a></li>
-    </ul>
-  </nav>
+<header>
+    <h1> ARMJEWELERS </h1>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/account">Account</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <h1>Welcome To Your Account!</h1>
 

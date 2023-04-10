@@ -88,6 +88,7 @@ a {
 .details-name-price{
     display: flex;
     flex-direction: row;
+    align-content:center;
 }
 
 .image-description{
@@ -103,6 +104,10 @@ a {
 }
 
 .product-price{
+    margin-left: 10px;
+}
+
+.details-rating{
     margin-left: 10px;
 }
 
