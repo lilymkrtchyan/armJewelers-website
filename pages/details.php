@@ -1,3 +1,10 @@
+
+<?php
+
+$id = $_GET['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,9 +32,17 @@
 
 <h1>Details for your product!</h1>
 
+<?php
+    $id = $_GET['id'];
+
+    // query DB
+    $result = exec_sql_query($db, 'SELECT * FROM products WHERE id = ' . $id);
+    $records = $result->fetchAll();
+    ?>
 
   <div class="details-name-price">
-    <h2> Berd </h2>
+    <!-- <h2> Berd </h2> -->
+    <h2><?php echo htmlspecialchars($records['product_name']);?> </h2>
     <h2 class="product-price">$20</h2>
   </div>
 
@@ -41,6 +56,8 @@
     <p>'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.</p>
     </div>
 </div>
+
+
 
  <!-- <p>
  <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?>

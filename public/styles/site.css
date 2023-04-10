@@ -54,7 +54,7 @@ nav ul li{
     margin-left: 5px;
 }
 
-a {
+nav a {
     color: white;
     list-style: none;
     border-radius: 3px;
@@ -77,6 +77,11 @@ a {
     border-radius: 5px;
     border-style: solid;
     border-color: aliceblue;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
 }
 
 /* details */

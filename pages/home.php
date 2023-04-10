@@ -55,6 +55,14 @@ const RATING = array(
     </nav>
   </header>
 
+  <!-- <sidebar>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/details">Details</a></li>
+        <li><a href="/account">Account</a></li>
+      </ul>
+  </sidebar> -->
+
   <?php
     // query DB
     $result = exec_sql_query($db, 'SELECT * FROM products;');
@@ -66,6 +74,11 @@ const RATING = array(
 
     <div class="all-products">
 
+    <script>
+    console.log(<?= json_encode($record['id']); ?>);
+    </script>
+
+    <a href="/details/?id=<?php echo $record['id'];?>">
         <div class="one-product">
             <div class="name-price-star">
               <p>
