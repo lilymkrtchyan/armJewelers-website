@@ -41,15 +41,19 @@ const RATING = array(
 <body>
 
 
-  <h1> ARMJEWELERS </h1>
 
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/details">Details</a></li>
-      <li><a href="/account">Account</a></li>
-    </ul>
-  </nav>
+
+  <header>
+    <h1> ARMJEWELERS </h1>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/details">Details</a></li>
+        <li><a href="/account">Account</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <?php
     // query DB
@@ -60,44 +64,39 @@ const RATING = array(
 <?php foreach ($records as $record) { ?>
 
 
-        <div class="all-products">
+    <div class="all-products">
 
         <div class="one-product">
-          <p>
-            <?php echo htmlspecialchars($record
-            ['product_name']); ?></th>
-          </p>
-        </div>
+            <div class="name-price-star">
+              <p>
+                <?php echo htmlspecialchars($record['product_name']); ?></th>
+              </p>
 
-        <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
+              <p>
+                <?php echo htmlspecialchars('$'.$record['product_price']); ?>
+              </p>
 
-        <div class="one-product">
-          <p>
-            <?php echo htmlspecialchars($record['product_description']); ?>
-          </p>
-        </div>
+              <div class="rating-stars">
+                <?php echo htmlspecialchars(RATING[$record['product_rating']]); ?>
+              </div>
+           </div>
 
-        <div class="one-product">
-          <p>
-            <?php echo htmlspecialchars($record['product_price']); ?>
-          </p>
-        </div>
 
-        <div class="one-product">
-          <div class="rating-stars">
-             <?php echo htmlspecialchars(RATING[$record['product_rating']]); ?>
+        <div class="image-description">
+
+          <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
+
+          <div class="product-descriptions">
+            <p>
+              <?php echo htmlspecialchars($record['product_description']); ?>
+            </p>
           </div>
         </div>
 
-        <div class="one-product">
-          <p>
-              <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?>
-          </p>
-        </div>
+      </div>
+    </div>
 
-</div>
-
-      <?php } ?>
+<?php } ?>
 
 
 </body>

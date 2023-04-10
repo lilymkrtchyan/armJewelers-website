@@ -11,13 +11,17 @@
 
 <body>
 
-<nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/details">Details</a></li>
-      <li><a href="/account">Account</a></li>
-    </ul>
-  </nav>
+<header>
+    <h1> ARMJEWELERS </h1>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/details">Details</a></li>
+        <li><a href="/account">Account</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <h1>Details for your product!</h1>
 
@@ -37,6 +41,10 @@
     <p>'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.</p>
     </div>
 </div>
+
+ <!-- <p>
+ <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?>
+  </p> -->
 
 </body>
 

@@ -1,8 +1,85 @@
+
+/* body */
+body{
+    background-color: brown;
+    color: aliceblue;
+}
+
+h1{
+    text-align: center;
+}
+
 img {
     width: 40%;
     height: 40%;
 }
 
+.rating-stars{
+    color: white;
+}
+
+/* header */
+header{
+    border-radius: 3px;
+    border-width: 3px;
+    border-style: solid;
+    background-image: url("/../public/images/armo_carpet.jpg");
+}
+
+
+/* navigation bar */
+nav {
+    display:flex;
+    flex-direction: row;
+    border-radius: 3px;
+    /* background-image: url("/../public/images/armo_carpet.jpg"); */
+    /* background-color: brown; */
+    border-width: 3px;
+    border-style: solid;
+    flex: 1;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 7px auto;
+}
+
+nav ul li{
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+a {
+    color: white;
+    list-style: none;
+    border-radius: 3px;
+    border-style: solid;
+    background-color: rgb(97, 10, 10);
+}
+
+/* home */
+.name-price-star{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name-price-star p, .name-price-star .rating-stars{
+    margin-left: 5px;
+}
+
+.one-product{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+/* details */
 .details-name-price{
     display: flex;
     flex-direction: row;
@@ -14,63 +91,23 @@ img {
 }
 
 .product-descriptions{
+
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 550px;
 }
-
-nav {
-    display:flex;
-    flex-direction: row;
-    border-radius: 3px;
-    background-color: brown;
-    border-width: 3px;
-    border-style: solid;
-    flex: 1;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-}
-
-nav ul li{
-    justify-content: space-between;
-    margin-left: 5px;
-}
-
-
 
 .product-price{
     margin-left: 10px;
 }
 
-body {
-    background-image: url("/../public/images/armo_carpet.jpg");
-}
-
-p, h2, h1, h3 {
-    border-radius: 2px;
-    border-style: solid;
-    background-color: whitesmoke;
-}
-
-a {
-    color: white;
-    list-style: none;
-    border-radius: 3px;
-    border-style: solid;
-}
-
-.rating-stars{
-    color: white;
-}
-
-label, .jewelery-type-label{
+/* account */
+.jewelery-type-label{
     color: white;
     font-weight: 100;
 }
 
 form {
-    background-color: brown;
+    /* background-color: brown; */
     width: 30%;
 }
