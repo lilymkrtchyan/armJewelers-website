@@ -1,6 +1,9 @@
 
 <?php
 
+include_once('../includes/db.php');
+$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+
 $id = $_GET['id'];
 
 ?>
@@ -33,17 +36,29 @@ $id = $_GET['id'];
 <h1>Details for your product!</h1>
 
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+
+
     $id = $_GET['id'];
 
     // query DB
     $result = exec_sql_query($db, 'SELECT * FROM products WHERE id = ' . $id);
     $records = $result->fetchAll();
-    ?>
+
+    // var_dump($result);
+    // echo "<h2>" . htmlspecialchars($result['product_name']) . "</h2>";
+    // ?>
+
+
+  <?php foreach ($records as $record) { ?>
 
   <div class="details-name-price">
     <!-- <h2> Berd </h2> -->
-    <h2><?php echo htmlspecialchars($records['product_name']);?> </h2>
-    <h2 class="product-price">$20</h2>
+    <h2><?php echo htmlspecialchars($record['product_name']);?> </h2>
+    <!-- <h2 class="product-price">$20</h2> -->
+    <h2 class="product-price"><?php echo htmlspecialchars('$' . $record['product_price']);?></h2>
   </div>
 
 <div class="image-description">
@@ -57,7 +72,7 @@ $id = $_GET['id'];
     </div>
 </div>
 
-
+<?php } ?>
 
  <!-- <p>
  <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?>

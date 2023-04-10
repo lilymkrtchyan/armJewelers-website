@@ -74,9 +74,6 @@ const RATING = array(
 
     <div class="all-products">
 
-    <script>
-    console.log(<?= json_encode($record['id']); ?>);
-    </script>
 
     <a href="/details/?id=<?php echo $record['id'];?>">
         <div class="one-product">
