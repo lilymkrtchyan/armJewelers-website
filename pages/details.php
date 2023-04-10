@@ -62,11 +62,12 @@ ini_set('display_errors', 'on');
   </div>
 
 <div class="image-description">
-  <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
+  <img src="../public/uploads/placeholder-image.jpg" alt="Placeholder image">
   <div class="product-descriptions">
     <h3>Metal: Silver</h3>
     <h3>Description:</h3>
-    <p>The Armenian Berd Dance is a beautiful and captivating folk dance that has been a part of Armenian culture for centuries. This traditional dance is named after the ancient Armenian city of Berd, and it is known for its high energy, dynamic movements, and powerful rhythms. The Berd Dance is typically performed by a group of dancers, who move in a circular formation, with the lead dancer leading the way. The dancers move their feet quickly and gracefully, with the music driving their movements. The dance is accompanied by traditional Armenian music, featuring instruments like the duduk, dhol, and zurna.</p>
+    <!-- <p>The Armenian Berd Dance is a beautiful and captivating folk dance that has been a part of Armenian culture for centuries. This traditional dance is named after the ancient Armenian city of Berd, and it is known for its high energy, dynamic movements, and powerful rhythms. The Berd Dance is typically performed by a group of dancers, who move in a circular formation, with the lead dancer leading the way. The dancers move their feet quickly and gracefully, with the music driving their movements. The dance is accompanied by traditional Armenian music, featuring instruments like the duduk, dhol, and zurna.</p> -->
+    <p><?php echo htmlspecialchars($record['product_description']);?></p>
     <h3>Jeweler:</h3>
     <p>'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.</p>
     </div>
