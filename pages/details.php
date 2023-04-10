@@ -65,9 +65,6 @@ const RATING = array(
 
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
-
 
     $id = $_GET['id'];
 
@@ -75,17 +72,15 @@ ini_set('display_errors', 'on');
     $result = exec_sql_query($db, "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id WHERE products.id=" . $id);
     $records = $result->fetchAll();
 
-    // var_dump($result);
-    // echo "<h2>" . htmlspecialchars($result['product_name']) . "</h2>";
-    // ?>
+     ?>
 
 
   <?php foreach ($records as $record) { ?>
 
   <div class="details-name-price">
-    <!-- <h2> Berd </h2> -->
+
     <h2><?php echo htmlspecialchars($record['product_name']);?> </h2>
-    <!-- <h2 class="product-price">$20</h2> -->
+
     <h2 class="product-price"><?php echo htmlspecialchars('$' . $record['product_price']);?></h2>
     <h2 class="details-rating"><?php echo htmlspecialchars(RATING[$record['product_rating']]);?></h2>
   </div>
@@ -96,11 +91,11 @@ ini_set('display_errors', 'on');
     <h3>Metal: <?php echo htmlspecialchars(MATERIAL[$record['material']]);?></h3>
     <h3>Jevelery Type: <?php echo htmlspecialchars(TYPE[$record['tag_type']]);?></h3>
     <h3>Description:</h3>
-    <!-- <p>The Armenian Berd Dance is a beautiful and captivating folk dance that has been a part of Armenian culture for centuries. This traditional dance is named after the ancient Armenian city of Berd, and it is known for its high energy, dynamic movements, and powerful rhythms. The Berd Dance is typically performed by a group of dancers, who move in a circular formation, with the lead dancer leading the way. The dancers move their feet quickly and gracefully, with the music driving their movements. The dance is accompanied by traditional Armenian music, featuring instruments like the duduk, dhol, and zurna.</p> -->
+
     <p><?php echo htmlspecialchars($record['product_description']);?></p>
     <h3>Jeweler: <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?></h3>
     <p><?php echo htmlspecialchars($record['jeweler_description']); ?></p>
-    <!-- <p>'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.</p> -->
+
     </div>
 </div>
 
