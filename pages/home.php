@@ -51,14 +51,20 @@ const RATING = array(
     </nav>
   </header>
 
-  <!-- <sidebar>
+  <div class="content-wrapper">
+  <sidebar>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/details">Details</a></li>
-        <li><a href="/account">Account</a></li>
+        <li><a href="/">On Sale</a></li>
+        <li><a href="/details">Rings</a></li>
+        <li><a href="/account">Necklaces</a></li>
+        <li><a href="/account">Belts</a></li>
+        <li><a href="/account">Earings</a></li>
+        <li><a href="/account">Brooches</a></li>
+        <li><a href="/account">Bracelets</a></li>
       </ul>
-  </sidebar> -->
+  </sidebar>
 
+  <div class="all-products">
   <?php
     // query DB
     $result = exec_sql_query($db, 'SELECT * FROM products;');
@@ -66,9 +72,6 @@ const RATING = array(
     ?>
 
 <?php foreach ($records as $record) { ?>
-
-
-    <div class="all-products">
 
 
     <a href="/details/?id=<?php echo $record['id'];?>">
@@ -100,11 +103,11 @@ const RATING = array(
         </div>
 
       </div>
-    </div>
+
 
 <?php } ?>
-
-
+</div>
+</div>
 </body>
 
 </html>

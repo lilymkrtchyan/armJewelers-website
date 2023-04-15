@@ -310,6 +310,20 @@ Table: products
 PRIMARY KEY (id)
 FOREIGN KEY (jeweler_id) REFERENCES jewelers(id)
 
+Updated:
+
+Table: products
+
+- id: INTEGER {NN, PK, AI, U},
+- product_name: TEXT {NN},
+- product_description: TEXT {},
+- product_price: INTEGER {NN},
+- Jeweler_id: INTEGER {NN},
+- product_rating: INTEGER {NN},
+- file_name: STRING {NN},
+- file_extension: STRING {NN},
+- file_path: STRING {NN}
+
 Table: product_tags
 
 - id: INTEGER {NN, PK, AI, U},
