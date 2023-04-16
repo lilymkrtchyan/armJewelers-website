@@ -195,14 +195,14 @@ VALUES
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (3, 1, 1, 2);
+    (3, 1, 0, 2);
 
 --- Insert tags for Nazeni (Armenian girl earing) ---
 --- id 4, silver, no sale, earing ---
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (4, 1, 1, 5);
+    (4, 1, 0, 5);
 
 --- Insert tags for Nakhshun (Armenian girl necklace) ---
 --- id 5, silver, no sale, necklace ---
@@ -216,14 +216,14 @@ VALUES
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (6, 1, 1, 1);
+    (6, 1, 0, 1);
 
 --- Insert tags for infinity brooch ---
 --- id 7, silver, no sale, brooch ---
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (7, 1, 1, 6);
+    (7, 1, 0, 6);
 
 --- Insert tags for alphabet earing---
 --- id 8, silver, no sale, earing ---
@@ -244,7 +244,7 @@ VALUES
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (10, 1, 1, 4);
+    (10, 1, 0, 4);
 
 --- Insert tags for Yarkhushta Ring---
 --- id 11, silver, no sale, ring ---
@@ -265,7 +265,7 @@ VALUES
 INSERT INTO
     tags (id, material, sale, tag_type)
 VALUES
-    (13, 1, 1, 1);
+    (13, 1, 0, 1);
 
 
 --- Insert seed data into product_tags ---

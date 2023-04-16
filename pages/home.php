@@ -21,8 +21,13 @@ const RATING = array(
   5 => '★★★★★'
 );
 
+const SALE = array(
+  1 => 'On sale!'
+);
+
 
 $tag_type_param = $_GET['tag_type'] ?? NULL; // untrusted
+$sale_param = $_GET['sale'] ?? NULL; // untrusted
 
 $base_url = '/';
 $url_rings = $base_url . '?' . http_build_query(array('tag_type' => 1));
@@ -32,6 +37,9 @@ $url_belts = $base_url . '?' . http_build_query(array('tag_type' => 4));
 $url_earings = $base_url . '?' . http_build_query(array('tag_type' => 5));
 $url_brooch = $base_url . '?' . http_build_query(array('tag_type' => 6));
 
+$url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
+
+
 
 //SQL query parts
 $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id";
@@ -40,7 +48,10 @@ $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products
 if($tag_type_param != NULL){
   $tag_type_param = intval($tag_type_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.tag_type = {$tag_type_param}";
-} else{
+} else if ($sale_param == 1){
+  $sale_param = intval($sale_param);
+  $sql_select_query = $sql_select_clause . " WHERE tags.sale = {$sale_param}";
+}else{
   $sql_select_query = $sql_select_clause;
 }
 
@@ -74,6 +85,7 @@ if($tag_type_param != NULL){
 
   <div class="content-wrapper">
   <sidebar>
+    <h4>Jewelery Type</h4>
       <ul>
         <li><a href=<?php echo $url_rings?>>Rings</a></li>
         <li><a href=<?php echo $url_necklaces?>>Necklaces</a></li>
@@ -82,6 +94,7 @@ if($tag_type_param != NULL){
         <li><a href=<?php echo $url_earings?>>Earings</a></li>
         <li><a href=<?php echo $url_brooch?>>Brooch</a></li>
       </ul>
+    <h4><a href=<?php echo $url_sale ?>>Hot Sale</a></h4>
   </sidebar>
 
   <div class="all-products">
