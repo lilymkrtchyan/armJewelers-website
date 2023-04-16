@@ -22,6 +22,29 @@ const RATING = array(
 );
 
 
+$tag_type_param = $_GET['tag_type'] ?? NULL; // untrusted
+
+$base_url = '/';
+$url_rings = $base_url . '?' . http_build_query(array('tag_type' => 1));
+$url_necklaces = $base_url . '?' . http_build_query(array('tag_type' => 2));
+$url_bracelets = $base_url . '?' . http_build_query(array('tag_type' => 3));
+$url_belts = $base_url . '?' . http_build_query(array('tag_type' => 4));
+$url_earings = $base_url . '?' . http_build_query(array('tag_type' => 5));
+$url_brooch = $base_url . '?' . http_build_query(array('tag_type' => 6));
+
+
+//SQL query parts
+$sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id";
+
+
+if($tag_type_param != NULL){
+  $tag_type_param = intval($tag_type_param);
+  $sql_select_query = $sql_select_clause . " WHERE tags.tag_type = {$tag_type_param}";
+} else{
+  $sql_select_query = $sql_select_clause;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +61,6 @@ const RATING = array(
 <body>
 
 
-
-
   <header>
     <h1> ARMJEWELERS </h1>
 
@@ -54,20 +75,19 @@ const RATING = array(
   <div class="content-wrapper">
   <sidebar>
       <ul>
-        <li><a href="/">On Sale</a></li>
-        <li><a href="/details">Rings</a></li>
-        <li><a href="/account">Necklaces</a></li>
-        <li><a href="/account">Belts</a></li>
-        <li><a href="/account">Earings</a></li>
-        <li><a href="/account">Brooches</a></li>
-        <li><a href="/account">Bracelets</a></li>
+        <li><a href=<?php echo $url_rings?>>Rings</a></li>
+        <li><a href=<?php echo $url_necklaces?>>Necklaces</a></li>
+        <li><a href=<?php echo $url_bracelets?>>Bracelets</a></li>
+        <li><a href=<?php echo $url_belts?>>Belts</a></li>
+        <li><a href=<?php echo $url_earings?>>Earings</a></li>
+        <li><a href=<?php echo $url_brooch?>>Brooch</a></li>
       </ul>
   </sidebar>
 
   <div class="all-products">
   <?php
     // query DB
-    $result = exec_sql_query($db, 'SELECT * FROM products;');
+    $result = exec_sql_query($db, $sql_select_query);
     $records = $result->fetchAll();
     ?>
 
