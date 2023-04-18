@@ -66,9 +66,10 @@ const RATING = array(
 <?php
 
 
-    $id = $_GET['id'];
+    $id = $_GET['product_id'];
 
     // query DB
+
     $result = exec_sql_query($db, "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id WHERE products.id=" . $id);
     $records = $result->fetchAll();
 
@@ -86,7 +87,7 @@ const RATING = array(
   </div>
 
 <div class="image-description">
-  <img src="../public/uploads/placeholder-image.jpg" alt="Placeholder image">
+<img src='../<?php echo htmlspecialchars($record['image_path']); ?>' alt="Product image">
   <div class="product-descriptions">
     <h3>Metal: <?php echo htmlspecialchars(MATERIAL[$record['material']]);?></h3>
     <h3>Jevelery Type: <?php echo htmlspecialchars(TYPE[$record['tag_type']]);?></h3>

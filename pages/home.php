@@ -100,6 +100,7 @@ if($tag_type_param != NULL){
   <div class="all-products">
   <?php
     // query DB
+
     $result = exec_sql_query($db, $sql_select_query);
     $records = $result->fetchAll();
     ?>
@@ -107,7 +108,8 @@ if($tag_type_param != NULL){
 <?php foreach ($records as $record) { ?>
 
 
-    <a href="/details/?id=<?php echo $record['id'];?>">
+   <a href="/details/?<?php echo http_build_query(array('product_id' => $record['product_id'])); ?>">
+
         <div class="one-product">
             <div class="name-price-star">
               <p>
@@ -126,7 +128,7 @@ if($tag_type_param != NULL){
 
         <div class="image-description">
 
-          <img src="public/uploads/placeholder-image.jpg" alt="Placeholder image">
+          <img src='/<?php echo htmlspecialchars($record['image_path']); ?>' alt="Product image">
 
           <div class="product-descriptions">
             <p>
