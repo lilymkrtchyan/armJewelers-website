@@ -61,7 +61,10 @@ $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
   <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p>
 
-  <form method="post" action="/account">
+  <form method="post" enctype="multipart/form-data" action="/account">
+
+  <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+
 
         <div>
           <div ><label for="name">Jewelery name:</label></div>
@@ -110,15 +113,19 @@ $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
           </div>
           </div>
 
+          <label for="product-image">Add an Image (max 10MB)</label>
+          <input type="file" name="product-image" id="product-image" />
+
         <div >
           <input type="submit" value="Add New Product" name="submit-course" />
         </div>
+
+
+
       </form>
 
     <?php if($show_confirmation){
-      echo htmlspecialchars($product_name);
-      echo htmlspecialchars($product_price);
-      echo htmlspecialchars($product_description);?>
+     ($product_description);?>
         <p>You have added the following product to the website!</p>
     <?PHP } ?>
 
