@@ -1,14 +1,14 @@
 --- products table ---
 CREATE TABLE products(
     id INTEGER NOT NULL UNIQUE,
-    product_name TEXT NOT NULL,
+    product_name TEXT,
     product_description TEXT,
-    product_price INTEGER NOT NULL,
-    product_rating INTEGER NOT NULL,
-    jeweler_id INTEGER NOT NULL,
-    image_name TEXT NOT NULL,
-    image_extension TEXT NOT NULL,
-    image_path TEXT NOT NULL,
+    product_price INTEGER,
+    product_rating INTEGER,
+    jeweler_id INTEGER,
+    image_name TEXT,
+    image_extension TEXT,
+    image_path TEXT,
     PRIMARY KEY (id AUTOINCREMENT)
     FOREIGN KEY (jeweler_id) REFERENCES jewelers(id)
 );

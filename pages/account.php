@@ -1,3 +1,38 @@
+<?php
+
+$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+
+  //Check if the form is submitted
+  $product_name = $_POST["name"]; //untrusted
+  $product_description = $_POST["description"]; // untrusted
+  $type = $_POST["type"]; //untrusted
+  $product_price = $_POST["price"]; //untrusted
+
+  $show_confirmation = false;
+
+    if (isset($_POST['submit-course'])){
+
+      //Assume form is valid
+      $form_valid = True;
+
+        //Store as variables
+        $form_values['name'] = trim($_POST['name']); //untrusted
+        $form_values['type'] = trim($_POST['type']); //untrusted
+        $form_values['description'] = trim($_POST['description']); //untrusted
+        $form_values['price'] = trim($_POST['price']); //untrusted
+
+        $show_confirmation = True;
+
+        $result = exec_sql_query($db,
+      "INSERT INTO products (product_name, product_description, product_price) VALUES (:productname, :productdescription, :productprice);", array(':productname' => $product_name,
+      ':productdescription' => $product_description,
+      ':productprice' => $product_price
+      )
+      );
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +61,7 @@
 
   <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p>
 
-  <form method="post" action="/">
+  <form method="post" action="/account">
 
         <div>
           <div ><label for="name">Jewelery name:</label></div>
@@ -79,6 +114,13 @@
           <input type="submit" value="Add New Product" name="submit-course" />
         </div>
       </form>
+
+    <?php if($show_confirmation){
+      echo htmlspecialchars($product_name);
+      echo htmlspecialchars($product_price);
+      echo htmlspecialchars($product_description);?>
+        <p>You have added the following product to the website!</p>
+    <?PHP } ?>
 
 </body>
 
