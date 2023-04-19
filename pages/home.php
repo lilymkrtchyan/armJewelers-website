@@ -43,6 +43,8 @@ $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
 
 //SQL query parts
 
+$sql_all_entries = "SELECT * FROM products";
+
 $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id";
 
 
@@ -53,7 +55,7 @@ if($tag_type_param != NULL){
   $sale_param = intval($sale_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.sale = {$sale_param}";
 }else{
-  $sql_select_query = $sql_select_clause;
+  $sql_select_query = $sql_all_entries;
 }
 
 
