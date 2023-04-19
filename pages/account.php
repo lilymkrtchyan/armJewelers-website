@@ -2,34 +2,100 @@
 
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
-  //Check if the form is submitted
+define("MAX_FILE_SIZE", 1000000);
+
+$upload_feedback = array(
+  'general_error' => False,
+  'too_large' => False
+);
+
+
   $product_name = $_POST["name"]; //untrusted
   $product_description = $_POST["description"]; // untrusted
   $type = $_POST["type"]; //untrusted
   $product_price = $_POST["price"]; //untrusted
 
-  $show_confirmation = false;
+  $upload_source = NULL;
+  $upload_file_name = NULL;
+  $upload_file_ext = NULL;
 
-    if (isset($_POST['submit-course'])){
+  if (isset($_POST["add-product"])) {
+    //information about the uploaded file
+    $upload = $_FILES['product-image'];
 
-      //Assume form is valid
-      $form_valid = True;
-
-        //Store as variables
-        $form_values['name'] = trim($_POST['name']); //untrusted
-        $form_values['type'] = trim($_POST['type']); //untrusted
-        $form_values['description'] = trim($_POST['description']); //untrusted
-        $form_values['price'] = trim($_POST['price']); //untrusted
-
-        $show_confirmation = True;
-
-        $result = exec_sql_query($db,
-      "INSERT INTO products (product_name, product_description, product_price) VALUES (:productname, :productdescription, :productprice);", array(':productname' => $product_name,
-      ':productdescription' => $product_description,
-      ':productprice' => $product_price
-      )
-      );
+    $upload_source = trim($_POST['image_path']); //untrusted
+    if(empty($upload_source)){
+      $upload_source = NULL;
     }
+
+    // get the info about the uploaded files.
+    $upload_file_name = basename($upload['name']);
+    $upload_file_ext = strtolower(pathinfo($upload_file_name, PATHINFO_EXTENSION));
+
+    // Assume the form is valid...
+    $form_valid = True;
+
+    // Check if the file was uploaded without errors
+    if ($upload['error'] == UPLOAD_ERR_OK) {
+        //check the uploaded image
+        if (!in_array($upload_file_ext, array('jpg'))) {
+            $form_valid = False;
+            $upload_feedback['general_error'] = True;
+        }
+    } elseif (($upload['error'] == UPLOAD_ERR_INI_SIZE) || ($upload['error'] == UPLOAD_ERR_FORM_SIZE)) {
+        // file was too big, let's try again
+        $form_valid = False;
+        $upload_feedback['too_large'] = True;
+    } else {
+        // upload was not successful
+        $form_valid = False;
+        $upload_feedback['general_error'] = True;
+    }
+}
+
+    if ($form_valid) {
+      // We successfully inserted the record into the database, now we need to
+      // move the uploaded file to it's final resting place: public/uploads directory
+
+      $result = exec_sql_query($db,
+            "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath);", array(':productname' => $product_name,
+                ':productdescription' => $product_description,
+                ':productprice' => $product_price,
+                ':imagename' => $upload_file_name,
+                ':imageext' => $upload_file_ext,
+                ':imagepath' => $upload_source
+            )
+        );
+
+
+      if($result){
+        $record_id = $db->lastInsertId('id');
+
+
+
+      // uploaded file should be in folder with same name as table with the primary key as the filename.
+      // Note: THIS IS NOT A URL; this is a FILE PATH on the server!
+      //       Do NOT include / at the beginning of the path; path should be a relative path.
+      //          NO: /public/...
+      //         YES: public/...
+      $upload_storage_path = 'public/uploads/products/' . $record_id . '.' . $upload_file_ext;
+
+      $result_path = exec_sql_query($db,
+    "UPDATE products SET image_path = :imagepath WHERE id = :recordid;", array(
+        ':imagepath' => $upload_storage_path,
+        ':recordid' => $record_id
+    )
+);
+
+      // Move the file to the public/uploads/clipart folder
+      // Note: THIS FUNCTION REQUIRES A PATH. NOT A URL!
+      if (move_uploaded_file($upload["tmp_name"], $upload_storage_path) == False) {
+        error_log("Failed to permanently store the uploaded file on the file server. Please check that the server folder exists.");
+      }
+    }
+
+  }
+
 
 ?>
 
@@ -117,7 +183,7 @@ $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
           <input type="file" name="product-image" id="product-image" />
 
         <div >
-          <input type="submit" value="Add New Product" name="submit-course" />
+          <input type="submit" value="Add New Product" name="add-product" />
         </div>
 
 
@@ -125,7 +191,7 @@ $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
       </form>
 
     <?php if($show_confirmation){
-     ($product_description);?>
+     ?>
         <p>You have added the following product to the website!</p>
     <?PHP } ?>
 
