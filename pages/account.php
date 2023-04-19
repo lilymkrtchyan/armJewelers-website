@@ -89,6 +89,7 @@ $upload_feedback = array(
 
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -182,9 +183,9 @@ $upload_feedback = array(
 
       </form>
 
-    <?php if($show_confirmation){
+    <?php if($result){
      ?>
-        <p>You have added the following product to the website!</p>
+        <p>Your entry has been successfully submitted!</p>
     <?PHP } ?>
 
 </body>
