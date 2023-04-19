@@ -42,6 +42,7 @@ $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
 
 
 //SQL query parts
+
 $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id";
 
 
@@ -100,6 +101,7 @@ if($tag_type_param != NULL){
   <div class="all-products">
   <?php
     // query DB
+
 
     $result = exec_sql_query($db, $sql_select_query);
     $records = $result->fetchAll();

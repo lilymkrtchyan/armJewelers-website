@@ -32,30 +32,29 @@ $upload_feedback = array(
     $upload_file_name = basename($upload['name']);
     $upload_file_ext = strtolower(pathinfo($upload_file_name, PATHINFO_EXTENSION));
 
-    // Assume the form is valid...
+
     $form_valid = True;
 
-    // Check if the file was uploaded without errors
+
     if ($upload['error'] == UPLOAD_ERR_OK) {
-        //check the uploaded image
+
         if (!in_array($upload_file_ext, array('jpg'))) {
             $form_valid = False;
             $upload_feedback['general_error'] = True;
         }
     } elseif (($upload['error'] == UPLOAD_ERR_INI_SIZE) || ($upload['error'] == UPLOAD_ERR_FORM_SIZE)) {
-        // file was too big, let's try again
+
         $form_valid = False;
         $upload_feedback['too_large'] = True;
     } else {
-        // upload was not successful
+
         $form_valid = False;
         $upload_feedback['general_error'] = True;
     }
 }
 
     if ($form_valid) {
-      // We successfully inserted the record into the database, now we need to
-      // move the uploaded file to it's final resting place: public/uploads directory
+
 
       $result = exec_sql_query($db,
             "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath);", array(':productname' => $product_name,
@@ -71,13 +70,6 @@ $upload_feedback = array(
       if($result){
         $record_id = $db->lastInsertId('id');
 
-
-
-      // uploaded file should be in folder with same name as table with the primary key as the filename.
-      // Note: THIS IS NOT A URL; this is a FILE PATH on the server!
-      //       Do NOT include / at the beginning of the path; path should be a relative path.
-      //          NO: /public/...
-      //         YES: public/...
       $upload_storage_path = 'public/uploads/products/' . $record_id . '.' . $upload_file_ext;
 
       $result_path = exec_sql_query($db,
@@ -87,14 +79,14 @@ $upload_feedback = array(
     )
 );
 
-      // Move the file to the public/uploads/clipart folder
-      // Note: THIS FUNCTION REQUIRES A PATH. NOT A URL!
+
       if (move_uploaded_file($upload["tmp_name"], $upload_storage_path) == False) {
         error_log("Failed to permanently store the uploaded file on the file server. Please check that the server folder exists.");
       }
     }
 
   }
+
 
 
 ?>
