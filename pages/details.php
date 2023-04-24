@@ -4,7 +4,7 @@
 include_once('../includes/db.php');
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
-$id = $_GET['id'];
+$id = $_GET['product_id'];
 
 const MATERIAL = array(
   1 => 'Silver',
@@ -66,7 +66,7 @@ const RATING = array(
 <?php
 
 
-    $id = $_GET['product_id'];
+    $id = $_GET['id'];
 
     // query DB
 

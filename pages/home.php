@@ -112,7 +112,7 @@ if($tag_type_param != NULL){
 <?php foreach ($records as $record) { ?>
 
 
-   <a href="/details/?<?php echo http_build_query(array('product_id' => $record['product_id'])); ?>">
+  <a href="/details/?<?php echo http_build_query(array('id' => $record['id'])); ?>">
 
         <div class="one-product">
             <div class="name-price-star">
