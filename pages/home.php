@@ -2,6 +2,11 @@
 
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
+const MATERIAL = array(
+  1 => 'Silver',
+  2 => 'Gold',
+  3 => 'Other'
+);
 
 const TYPE = array(
   1 => 'Ring',
@@ -28,16 +33,11 @@ const SALE = array(
 
 $tag_type_param = $_GET['tag_type'] ?? NULL; // untrusted
 $sale_param = $_GET['sale'] ?? NULL; // untrusted
+$material = $_GET['material'] ?? NULL; //untrusted
 
 $base_url = '/';
-$url_rings = $base_url . '?' . http_build_query(array('tag_type' => 1));
-$url_necklaces = $base_url . '?' . http_build_query(array('tag_type' => 2));
-$url_bracelets = $base_url . '?' . http_build_query(array('tag_type' => 3));
-$url_belts = $base_url . '?' . http_build_query(array('tag_type' => 4));
-$url_earings = $base_url . '?' . http_build_query(array('tag_type' => 5));
-$url_brooch = $base_url . '?' . http_build_query(array('tag_type' => 6));
-
 $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
+
 
 
 
@@ -51,12 +51,17 @@ $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products
 if($tag_type_param != NULL){
   $tag_type_param = intval($tag_type_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.tag_type = {$tag_type_param}";
+  $tag_sidebar = $sql_select_clause . "WHERE tags.tag_id = " . TYPE[$tag['tag_id']];
 } else if ($sale_param == 1){
   $sale_param = intval($sale_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.sale = {$sale_param}";
-}else{
+} else if($material != NULL){
+  $sale_param = intval($sale_param);
+  $sql_select_query = $sql_select_clause . " WHERE tags.material = {$material}";
+} else{
   $sql_select_query = $sql_all_entries;
 }
+
 
 
 ?>
@@ -88,17 +93,32 @@ if($tag_type_param != NULL){
 
   <div class="content-wrapper">
   <sidebar>
-    <h4>Jewelery Type</h4>
-      <ul>
-        <li><a href=<?php echo $url_rings?>>Rings</a></li>
-        <li><a href=<?php echo $url_necklaces?>>Necklaces</a></li>
-        <li><a href=<?php echo $url_bracelets?>>Bracelets</a></li>
-        <li><a href=<?php echo $url_belts?>>Belts</a></li>
-        <li><a href=<?php echo $url_earings?>>Earings</a></li>
-        <li><a href=<?php echo $url_brooch?>>Brooch</a></li>
-      </ul>
-    <h4><a href=<?php echo $url_sale ?>>Hot Sale</a></h4>
+    <h4>Jewelry Type</h4>
+    <ul>
+      <?php foreach (TYPE as $key => $value) : ?>
+        <li>
+          <a href="<?php echo $base_url . '?' . http_build_query(array('tag_type' => $key)); ?>">
+            <?php echo htmlspecialchars($value); ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <h4><a href="<?php echo $base_url . '?' . $url_sale ?>">Hot Sale</a></h4>
+
+    <ul>
+      <?php foreach (MATERIAL as $key => $value) : ?>
+        <li>
+          <a href="<?php echo $base_url . '?' . http_build_query(array('material' => $key)); ?>">
+            <?php echo htmlspecialchars($value); ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+
   </sidebar>
+
 
   <div class="all-products">
   <?php
@@ -113,6 +133,7 @@ if($tag_type_param != NULL){
 
 
   <a href="/details/?<?php echo http_build_query(array('id' => $record['id'])); ?>">
+
 
         <div class="one-product">
             <div class="name-price-star">
