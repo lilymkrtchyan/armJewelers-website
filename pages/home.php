@@ -30,10 +30,15 @@ const SALE = array(
   1 => 'On sale!'
 );
 
+const STONE = array(
+  0 => 'Without stones',
+  1 => 'With stones'
+);
 
 $tag_type_param = $_GET['tag_type'] ?? NULL; // untrusted
 $sale_param = $_GET['sale'] ?? NULL; // untrusted
 $material = $_GET['material'] ?? NULL; //untrusted
+$stone = $_GET['stone'] ?? NULL; //untrusted
 
 $base_url = '/';
 $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
@@ -58,6 +63,9 @@ if($tag_type_param != NULL){
 } else if($material != NULL){
   $sale_param = intval($sale_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.material = {$material}";
+} else if($material != NULL){
+  $stone = intval($stone);
+  $sql_select_query = $sql_select_clause . " WHERE tags.stone = {$stone}";
 } else{
   $sql_select_query = $sql_all_entries;
 }
@@ -104,12 +112,30 @@ if($tag_type_param != NULL){
       <?php endforeach; ?>
     </ul>
 
-    <h4><a href="<?php echo $base_url . '?' . $url_sale ?>">Hot Sale</a></h4>
+    <ul>
+      <?php foreach (SALE as $key => $value) : ?>
+        <li>
+          <a href="<?php echo $base_url . '?' . http_build_query(array('sale' => $key)); ?>">
+            <?php echo htmlspecialchars($value); ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
 
     <ul>
       <?php foreach (MATERIAL as $key => $value) : ?>
         <li>
           <a href="<?php echo $base_url . '?' . http_build_query(array('material' => $key)); ?>">
+            <?php echo htmlspecialchars($value); ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <ul>
+      <?php foreach (STONE as $key => $value) : ?>
+        <li>
+          <a href="<?php echo $base_url . '?' . http_build_query(array('stone' => $key)); ?>">
             <?php echo htmlspecialchars($value); ?>
           </a>
         </li>
