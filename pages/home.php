@@ -61,7 +61,7 @@ if($tag_type_param != NULL){
 } else if($material != NULL){
   $sale_param = intval($sale_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.material = {$material}";
-} else if($material != NULL){
+} else if($stone != NULL){
   $stone = intval($stone);
   $sql_select_query = $sql_select_clause . " WHERE tags.stone = {$stone}";
 } else{

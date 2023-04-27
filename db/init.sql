@@ -182,93 +182,93 @@ VALUES
 --- Insert tags for Berd ---
 --- id 1, silver, no sale, ring ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (1, 1, 1, 1);
+    (1, 1, 1, 1, 0);
 
 --- Insert tags for Armenian Girl Bracelet ---
 --- id 2, silver, no sale, bracelet ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (2, 1, 1, 3);
+    (2, 1, 1, 3, 0);
 
 --- Insert tags for The Mount Ararat ---
 --- id 3, silver, no sale, necklace ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (3, 1, 0, 2);
+    (3, 1, 0, 2, 0);
 
 --- Insert tags for Nazeni (Armenian girl earing) ---
 --- id 4, silver, no sale, earing ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (4, 1, 0, 5);
+    (4, 1, 0, 5, 0);
 
 --- Insert tags for Nakhshun (Armenian girl necklace) ---
 --- id 5, silver, no sale, necklace ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (5, 1, 1, 2);
+    (5, 1, 1, 2, 0);
 
 --- Insert tags for crave paintings ---
 --- id 6, silver, no sale, ring ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (6, 1, 0, 1);
+    (6, 1, 0, 1, 0);
 
 --- Insert tags for infinity brooch ---
 --- id 7, silver, no sale, brooch ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (7, 1, 0, 6);
+    (7, 1, 0, 6, 0);
 
 --- Insert tags for alphabet earing---
 --- id 8, silver, no sale, earing ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (8, 1, 1, 5);
+    (8, 1, 1, 5, 0);
 
 --- Insert tags for Surb Gevord ring---
 --- id 9, silver, no sale, ring ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (9, 1, 1, 1);
+    (9, 1, 1, 1, 0);
 
 --- Insert tags for Syuniq Belt---
 --- id 10, silver, no sale, belt ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (10, 1, 0, 4);
+    (10, 1, 0, 4, 0);
 
 --- Insert tags for Yarkhushta Ring---
 --- id 11, silver, no sale, ring ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (11, 1, 1, 1);
+    (11, 1, 1, 1, 0);
 
 --- Insert tags for My Yerevan necklace protest---
 --- id 12, silver, no sale, necklace ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (12, 1, 1, 2);
+    (12, 1, 1, 2, 0);
 
 --- Insert tags for Yerevan ring---
 --- id 13, silver, no sale, ring ---
 INSERT INTO
-    tags (id, material, sale, tag_type)
+    tags (id, material, sale, tag_type, stone)
 VALUES
-    (13, 1, 0, 1);
+    (13, 1, 0, 1, 0);
 
 
 --- Insert seed data into product_tags ---
