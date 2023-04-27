@@ -60,7 +60,7 @@ $upload_feedback = array(
 
 
       $result = exec_sql_query($db,
-            "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath);", array(':productname' => $product_name,
+            "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path, jeweler_id) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath, 1);", array(':productname' => $product_name,
                 ':productdescription' => $product_description,
                 ':productprice' => $product_price,
                 ':imagename' => $upload_file_name,
@@ -87,6 +87,8 @@ $upload_feedback = array(
                 ':tagid' => $tag_id
             )
         );
+
+
     }
 
       $upload_storage_path = 'public/uploads/products/' . $record_id . '.' . $upload_file_ext;
