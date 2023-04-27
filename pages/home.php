@@ -41,7 +41,7 @@ $material = $_GET['material'] ?? NULL; //untrusted
 $stone = $_GET['stone'] ?? NULL; //untrusted
 
 $base_url = '/';
-$url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
+// $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
 
 
 
