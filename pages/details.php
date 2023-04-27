@@ -1,10 +1,13 @@
 
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 include_once('../includes/db.php');
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
-$id = $_GET['product_id'];
+$id = $_GET['id'];
 
 const MATERIAL = array(
   1 => 'Silver',
@@ -69,6 +72,8 @@ const RATING = array(
     $id = $_GET['id'];
 
     // query DB
+
+    $sql_all_entries = exec_sql_query($db, "SELECT * FROM products");
 
     $result = exec_sql_query($db, "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id WHERE products.id=" . $id);
     $records = $result->fetchAll();

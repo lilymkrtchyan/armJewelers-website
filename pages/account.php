@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
 define("MAX_FILE_SIZE", 1000000);
@@ -69,6 +72,22 @@ $upload_feedback = array(
 
       if($result){
         $record_id = $db->lastInsertId('id');
+
+      $insert_tag = exec_sql_query(
+        $db, "INSERT INTO tags (tag_type) VALUES (:tagtype);", array(':tagtype' => $type)
+      );
+
+      if ($insert_tag) {
+        $tag_id = $db->lastInsertId('id');
+
+        // Insert product_id and tag_id into the "product_tags" table
+        $insert_product_tag = exec_sql_query($db,
+            "INSERT INTO product_tags (product_id, tag_id) VALUES (:productid, :tagid);", array(
+                ':productid' => $record_id,
+                ':tagid' => $tag_id
+            )
+        );
+    }
 
       $upload_storage_path = 'public/uploads/products/' . $record_id . '.' . $upload_file_ext;
 

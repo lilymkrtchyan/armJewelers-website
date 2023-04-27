@@ -43,9 +43,9 @@ CREATE TABLE product_tags(
 --- tags table ---
 CREATE TABLE tags(
     id INTEGER NOT NULL UNIQUE,
-    material INTEGER NOT NULL,
+    material INTEGER,
     stone TEXT,
-    sale INTEGER NOT NULL,
+    sale INTEGER,
     tag_type INTEGER NOT NULL,
     PRIMARY KEY (id AUTOINCREMENT)
 );
