@@ -1,7 +1,5 @@
 <?php
 
-$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
-
 const MATERIAL = array(
   1 => 'Silver',
   2 => 'Gold',

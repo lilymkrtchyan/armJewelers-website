@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+//$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
 define("MAX_FILE_SIZE", 1000000);
 
