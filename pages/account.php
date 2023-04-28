@@ -17,6 +17,7 @@ $upload_feedback = array(
   $product_description = $_POST["description"]; // untrusted
   $type = $_POST["type"]; //untrusted
   $product_price = $_POST["price"]; //untrusted
+  $stone = $_POST["stone"]; //untrusted
 
   $upload_source = NULL;
   $upload_file_name = NULL;
@@ -74,7 +75,7 @@ $upload_feedback = array(
         $record_id = $db->lastInsertId('id');
 
       $insert_tag = exec_sql_query(
-        $db, "INSERT INTO tags (tag_type) VALUES (:tagtype);", array(':tagtype' => $type)
+        $db, "INSERT INTO tags (tag_type, stone) VALUES (:tagtype, :stone);", array(':tagtype' => $type, ':stone' => $stone)
       );
 
       if ($insert_tag) {
@@ -191,6 +192,19 @@ $upload_feedback = array(
               <label for="brooch">Brooch</label>
             </div>
           </div>
+
+          <div  role="group" aria-labelledby="stone">
+          <div class="jewelery-type-label"  id="stone">Does it have a gem?</div>
+
+            <div >
+              <input type="radio" id="yes" name="stone" value=1>
+              <label for="yes">Yes</label>
+            <div>
+              <input type="radio" id="no" name="stone" value=0 >
+              <label for="no">No</label>
+            </div>
+          </div>
+
           </div>
 
           <label for="product-image">Add an Image (max 10MB)</label>
