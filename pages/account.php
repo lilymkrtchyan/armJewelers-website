@@ -25,8 +25,14 @@ $upload_feedback = array(
   $product_description = $_POST["description"]; // untrusted
   $type = $_POST["type"]; //untrusted
   $product_price = $_POST["price"]; //untrusted
-  $stone = $_POST["stone"]; //untrusted
+  // $stone = $_POST["stone"]; //untrusted
   $jeweler = $_POST["jeweler"]; //untrusted
+  $gem = $_POST["gem"];
+  $sale = $_POST["sale"];
+  $material = $_POST["material"];
+
+  echo $gem;
+  echo $sale;
 
   $upload_source = NULL;
   $upload_file_name = NULL;
@@ -85,7 +91,7 @@ $upload_feedback = array(
         $record_id = $db->lastInsertId('id');
 
       $insert_tag = exec_sql_query(
-        $db, "INSERT INTO tags (tag_type, stone) VALUES (:tagtype, :stone);", array(':tagtype' => $type, ':stone' => $stone)
+        $db, "INSERT INTO tags (tag_type, stone, sale, material) VALUES (:tagtype, :stone, :sale, :material);", array(':tagtype' => $type, ':stone' => $gem, ':sale' => $sale, ':material' => $material)
       );
 
       if ($insert_tag) {
@@ -207,15 +213,24 @@ $upload_feedback = array(
             </div>
           </div>
 
+          <div>
+            <label for="material">Material</label>
+            <select id="material" name="material">
+                <option value=1>Silver</option>
+                <option value=2>Gold</option>
+                <option value=3>Other</option>
+            </select>
+        </div>
+
           <div  role="group" aria-labelledby="stone">
-          <div class="jewelery-type-label"  id="stone">Does it have a gem?</div>
+          <div class="jewelery-type-label"  id="stone">Jewelery features</div>
 
             <div >
-              <input type="radio" id="yes" name="stone" value=1>
-              <label for="yes">Yes</label>
+              <input type="checkbox" id="gem" name="gem" value=1>
+              <label for="gem">Has a gem</label>
             <div>
-              <input type="radio" id="no" name="stone" value=0 >
-              <label for="no">No</label>
+              <input type="checkbox" id="sale" name="sale" value=1 >
+              <label for="sale">Is on sale</label>
             </div>
           </div>
 
