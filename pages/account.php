@@ -26,6 +26,7 @@ $upload_feedback = array(
   $type = $_POST["type"]; //untrusted
   $product_price = $_POST["price"]; //untrusted
   $stone = $_POST["stone"]; //untrusted
+  $jeweler = $_POST["jeweler"]; //untrusted
 
   $upload_source = NULL;
   $upload_file_name = NULL;
@@ -69,12 +70,13 @@ $upload_feedback = array(
 
 
       $result = exec_sql_query($db,
-            "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path, jeweler_id) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath, 1);", array(':productname' => $product_name,
+            "INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path, jeweler_id) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath, :jeweler);", array(':productname' => $product_name,
                 ':productdescription' => $product_description,
                 ':productprice' => $product_price,
                 ':imagename' => $upload_file_name,
                 ':imageext' => $upload_file_ext,
-                ':imagepath' => $upload_source
+                ':imagepath' => $upload_source,
+                ':jeweler' => $jeweler
             )
         );
 
@@ -214,6 +216,20 @@ $upload_feedback = array(
             <div>
               <input type="radio" id="no" name="stone" value=0 >
               <label for="no">No</label>
+            </div>
+          </div>
+
+          </div>
+
+          <div  role="group" aria-labelledby="jeweler">
+          <div class="jewelery-type-label"  id="jeweler">Who's the jeweler?</div>
+
+            <div >
+              <input type="radio" id="imzardy" name="jeweler" value=1>
+              <label for="yes">Im Zardy</label>
+            <div>
+              <input type="radio" id="handmade" name="jeweler" value=2 >
+              <label for="no">Protest Handmade</label>
             </div>
           </div>
 
