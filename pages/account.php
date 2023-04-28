@@ -3,9 +3,17 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+if ($error = error_get_last()) {
+  echo "Error: " . $error['message'];
+}
+
 //$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
 
 define("MAX_FILE_SIZE", 1000000);
+
+if (is_user_logged_in()){
+
+
 
 $upload_feedback = array(
   'general_error' => False,
@@ -109,7 +117,7 @@ $upload_feedback = array(
 
   }
 
-
+}
 
 
 ?>
@@ -138,7 +146,11 @@ $upload_feedback = array(
     </nav>
   </header>
 
+  <?php if (is_user_logged_in()) { ?>
+
   <h1>Welcome To Your Account!</h1>
+
+  <a href="<?php echo logout_url(); ?>">Log Out</a>
 
   <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p>
 
@@ -222,6 +234,15 @@ $upload_feedback = array(
      ?>
         <p>Your entry has been successfully submitted!</p>
     <?PHP } ?>
+
+  <?php } else { ?>
+
+  <p>Please sign in to access your account!</p>
+
+<h2>Sign In</h2>
+
+<?php echo login_form($_SERVER['REQUEST_URI'], $session_messages);
+ }?>
 
 </body>
 

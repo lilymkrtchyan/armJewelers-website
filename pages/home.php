@@ -48,7 +48,7 @@ $base_url = '/';
 
 $sql_all_entries = "SELECT * FROM products";
 
-$sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN jewelers ON jewelers.id=products.jeweler_id";
+$sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN users ON users.id=products.jeweler_id";
 
 
 if($tag_type_param != NULL){

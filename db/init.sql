@@ -10,7 +10,7 @@ CREATE TABLE products(
     image_extension TEXT,
     image_path TEXT,
     PRIMARY KEY (id AUTOINCREMENT)
-    FOREIGN KEY (jeweler_id) REFERENCES jewelers(id)
+    FOREIGN KEY (jeweler_id) REFERENCES users(id)
 );
 
 -- tag materials
@@ -51,23 +51,32 @@ CREATE TABLE tags(
 );
 
 --- jewelers table ---
-CREATE TABLE jewelers(
-    id INTEGER NOT NULL UNIQUE,
-    jeweler_name TEXT NOT NULL,
-    jeweler_password TEXT NOT NULL,
-    jeweler_description TEXT,
-    PRIMARY KEY (id AUTOINCREMENT)
-);
-
---- users table ---
 CREATE TABLE users(
     id INTEGER NOT NULL UNIQUE,
     username TEXT NOT NULL,
-    user_password TEXT NOT NULL,
-    product_id INTEGER,
-    PRIMARY KEY (id AUTOINCREMENT)
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    password TEXT NOT NULL,
+    jeweler_description TEXT,
+    PRIMARY KEY(id AUTOINCREMENT)
 );
+
+CREATE TABLE sessions(
+    id INTEGER NOT NULL UNIQUE,
+    user_id INTEGER NOT NULL UNIQUE,
+    session TEXT NOT NULL UNIQUE,
+    last_login TEXT NOT NULL,
+    PRIMARY KEY (id AUTOINCREMENT)
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+--- users table ---
+-- CREATE TABLE users(
+--     id INTEGER NOT NULL UNIQUE,
+--     username TEXT NOT NULL,
+--     user_password TEXT NOT NULL,
+--     product_id INTEGER,
+--     PRIMARY KEY (id AUTOINCREMENT)
+--     FOREIGN KEY (product_id) REFERENCES products(id)
+-- );
 
 --- comments table ---
 CREATE TABLE comments(
@@ -166,15 +175,15 @@ VALUES
 
 --- Insert Im Zardy to jewelers table ---
 INSERT INTO
-    jewelers (id, jeweler_name, jeweler_password, jeweler_description)
+    users (id, username, password, jeweler_description)
 VALUES
-    (1, "Im Zardy", 'ImZardy123' , "'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.");
+    (1, "ImZardy", '$2y$10$QtCybkpkzh7x5VN11APHned4J8fu78.eFXlyAMmahuAaNcbwZ7FH.' , "'Im Zardy' is Armenian for My Jewelery. We are a group of talented and dedicated jewelers making unique jewelery that is rich with the juxdoposition of Armenian traditional and modern styles and references to Armenian culture and history.");
 
 --- Insert Protest Handmade into jewelers table ---
 INSERT INTO
-    jewelers (id, jeweler_name, jeweler_password , jeweler_description)
+    users (id, username, password , jeweler_description)
 VALUES
-    (2, "Protest Handmade", 'Protest888' , "SILVER and LEATHER cool accessories with the best quality! Cause In such ugly times, the only true protest is beauty.");
+    (2, "ProtestHandmade", '$2y$10$QtCybkpkzh7x5VN11APHned4J8fu78.eFXlyAMmahuAaNcbwZ7FH.' , "SILVER and LEATHER cool accessories with the best quality! Cause In such ugly times, the only true protest is beauty.");
 
 
 --- Insert data into tags table ---
@@ -352,14 +361,14 @@ VALUES
     (13, 13, 13);
 
 --- Insert seed data to users ---
-INSERT INTO
-    users (id, username, user_password, product_id)
-VALUES
-    (1, 'lilymkrtchyan', 'lm688' , 10);
+-- INSERT INTO
+--     users (id, username, user_password, product_id)
+-- VALUES
+--     (1, 'lilymkrtchyan', 'lm688' , 10);
 
 --- Insert seed data into comments ---
 --- lilymkrtchyan comment to Syuniq Belt ---
-INSERT INTO
-    comments (id, comment_rating, body, product_id, user_id)
-VALUES
-    (1, 5, "My favorite Armenian accessory!", 10, 1);
+-- INSERT INTO
+--     comments (id, comment_rating, body, product_id, user_id)
+-- VALUES
+--     (1, 5, "My favorite Armenian accessory!", 10, 1);
