@@ -268,8 +268,13 @@ sketch(es) + explanation:
 ![The home page](home.jpg)
 The home page shows some parts of some of the collections and allows Ashkhen to choose to see more if she desires. This is to show what the website has to offer and show some of the variety that the collections represent. The home page of the website will also include information about Armenia and some of the symbols of Armenia for Ashkhen to later recognize those hostiry and culture sumbols in the pieces. The home page also has a navigation bar from where Ashkhen can choose to go either to the page where all the collections and products and showcased, or to navigate to the login page, to her account, her wishlist, or the cart page.
 
+
 ![All products page](all_products.jpg)
 This page shows all the products and all the filters that Ashkhen can filter by.
+
+UPDATE:
+![New All products page](home_new_sketch.jpg)
+I am changing the layout of all the products page. Instead of having all the products layed out like a square, I am changing it to be horizontal instead. I am also changing the sidebar filtering from form to links, hence simultaneous filters will not be supported.
 
 ![Sevan's profile page](administrator_profile.jpg)
 This page shows the account page that Sevan will have. He has all the statistics in terms of graphs of how he's doing in his jewelery sells as well as an insert form where he can insert all the information for a new jewelery piece. He will need to insert all the necessary information for a piece, which would be the image(s), the name of the jewelery, description, the material and store of the jewelery, the price, etc.
@@ -277,11 +282,22 @@ This page shows the account page that Sevan will have. He has all the statistics
 ![Ashkhen's profile](customer_profile.jpg)
 This page shows Ashkhen all her heated products that are added to her wishlist page in her account.
 
+UPDATE: I have decided not to imp,emet Ashkhen's profile as customers do not need to be loged in to access any information on the page (that is not administrative).
+
 ![Log in page](login.jpg)
 This is the login page that differentiates the interfaces between the Sevan and Ashkhen. They will have to insert their email address and password in order to login.
 
+UPDATE:
+![New Log in and account pages page](login_account_new_sketch.jpg)
+The screen above in the image is the log in form that is similar to the old log in page.
+I have changed the account page significantly as I am not implementing anything on th eaccount except for the insert form. The statistics and analysis from the previous sketch along with all the jeweler's product need a more complicated implementation which is beyong the scope of this course.
+
 ![Product details page](product_details.jpg)
 This page will show all the details about the product if Ashkhen chooses to see them. The page will include the image of the product, or the tambnail of several images if there are many images. It will include the information about the material and the stone, the general description of the product, as well as the information about the jeweler - Sevan, for example. It will show the ranking of the product and all the comments and will allow Ashkhen to also leave a comment and a ranking.
+
+UPDATE:
+![New Product details page](details_new_sketch.jpg)
+The new product details page is similar to the old one except I am not planning to implement the commenting and rating features anymore.
 
 ### Catalog Design Patterns (Milestone 1)
 > Explain how you used design patterns in your site's design. (1-2 sentences)
@@ -356,6 +372,8 @@ Table: users
 - username: TEXT {NN},
 - product_id: INTEGER
 
+UPDATE: originally my users table was supposed to be for the consumers' log in. Since that would complicate the website beyond the scope of this assignment, I have since decided to change the jewelers table to the users table, and disable the users table.
+
 PRIMARY KEY (id)
 FOREIGN KEY (product_id) REFERENCES products(id)
 
@@ -366,6 +384,8 @@ Table: comments
 - comment: TEXT,
 - product_id: INTEGER {NN, FK},
 - user_id: INTEGER {NN, FK}
+
+UPDATE: I have not implemented the comments table as it was beyond the scope of this assignment.
 
 PRIMARY KEY (id)
 FOREIGN KEY (product_id) REFERENCES products(id)
@@ -435,25 +455,33 @@ The same label issue existed for "Who's the jeweler" entry, which I have also co
 ### Self-Reflection (Final Submission)
 > Reflect on what you learned during this assignment. How have you improved from Projects 1 and 2?
 
-TODO: reflection
+reflection:
+
+I definitely think that I have improved a lot from my project 1 and 2 assignemtns. I feel more confortable using interactivity in my website. I have learned how to use http parameters and build customized webpages, such as the details page for my website. I have also used that to filter my home products using the same http parameters and retrieve information from the database based on the parameter passed. Additionally, I have learned how to upload files to my project by adding the upload button to my insert form then retrieving the name, extension and all the necessary information from that upload, creating the upload's permanent location path, and moving the upload to its permanent location. I think the most surprising thing that I have learned, for me, is adding the sessions and controls and being able to protect the database by controlling who can get information from and insert information to the database from the server-side, and hiding/showing neccessary atributed in the interface.
 
 
 > Take some time here to reflect on how much you've learned since you started this class. It's often easy to ignore our own progress. Take a moment and think about your accomplishments in this class. Hopefully you'll recognize that you've accomplished a lot and that you should be very proud of those accomplishments! (1-3 sentences)
 
-TODO: reflection
+reflection:
+
+In addition to all that I have mentioned in the above question about what I have learned during only project 3, I have also learned a lot during the whole course. Previously having no experience with server-side rendering, I have created a fully functional website that uses server-side rendering and supports interactivity.
 
 
 ### Collaborators (Final Submission)
 > List any persons you collaborated with on this project.
 
-TODO: list your collaborators
+list your collaborators:
+
+I have not colaborated with anyone on this project.
 
 
 ### Reference Resources (Final Submission)
 > Please cite any external resources you referenced in the creation of your project.
 > (i.e. W3Schools, StackOverflow, Mozilla, etc.)
 
-TODO: list reference resources
+list reference resources:
+Lecture notes, lecture demos, labs
+Mozilla documentation
 
 
 ### Grading: User Accounts (Final Submission)
@@ -462,16 +490,20 @@ TODO: list reference resources
 
 **Administrator User:**
 
-- Username: TODO: username
-- Password: TODO: password
+- Username: ImZardy
+- Password: monkey
 
-**Consumer User:**
+- username: ProtestHandmade
+- password: monkey
 
-- Username: TODO: username
-- Password: TODO: password
+<!-- **Consumer User:**
+
+- Username: username
+- Password: password -->
 
 **Note:** Not all websites will support consumer log in. If your website doesn't, say so.
 
+My website doesn't support consumer login.
 
 ### Grading: Step-by-Step Instructions (Final Submission)
 > Write step-by-step instructions for the graders.
@@ -481,25 +513,40 @@ TODO: list reference resources
 
 _View all entries:_
 
-1. TODO: instructions
-2.
+1. '/' (the home page) shows all entries
+2. No need to log in to view all entries
+
 
 _View all entries for a tag:_
 
-1. TODO: instructions
-2.
+1. There is a sidebar in the home page with all the filters
+2. Click on a filter (heading are not linked they describe the group of filters, the linked filters use hover-over and have underline)
+3. To go back to all entries after single tag, click the "Home" link in the navigation bar
 
 _View a single entry's details:_
 
-1. TODO: instructions
-2.
+1. Click on the tumbnail from the home page
+2. Details page will open
 
 _How to insert and upload a new entry:_
 
-1. TODO: instructions
-2.
+1. Go to account page in the navigation bar
+2. Insert the username and password
+3. After logging in, the website shows the insert form (doesn't take you to the home page, this is intentional)
+4. Fill in the form
+5. Click "Add new product" button
+6. A confirmation message shows when the submission was successful
+7. Go to home page using the navigation bar to see the newly added product
+8. When you are logged in, there is a link to log out in the navigation bar
+9. Click to the "Log out" in the navigation bar to log out
 
 _How to delete an entry:_
 
-1. TODO: instructions
-2.
+1. You are not able to see the delete feature if you are not logged in
+2. Use the navigation bar to navigate to the account page
+3. Fill in the log in form
+4. After loggin in you see the insert form in the account page
+5. Leave the account page by navigating to the home page in the navigation bar
+6. In the home page (while logged in) you see "delete" buttons for every product
+7. Click "delete" to delete a product
+8. The page refreshes with the remaining products
