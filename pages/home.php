@@ -21,8 +21,8 @@ const SALE = array(
 );
 
 const STONE = array(
-  0 => 'Without stones',
-  1 => 'With stones'
+  0 => 'Without gems',
+  1 => 'With gems'
 );
 
 $tag_type_param = $_GET['tag_type'] ?? NULL; // untrusted
@@ -31,7 +31,7 @@ $material = $_GET['material'] ?? NULL; //untrusted
 $stone = $_GET['stone'] ?? NULL; //untrusted
 
 $base_url = '/';
-// $url_sale = $base_url . '?' . http_build_query(array('sale' => 1));
+
 
 
 
@@ -61,6 +61,7 @@ if($tag_type_param != NULL){
   $sql_select_query = $sql_all_entries;
 }
 
+if (is_user_logged_in()){
 if (isset($_POST['delete_product'])) {
   $product_id = $_POST['product_id'];
 
@@ -75,7 +76,7 @@ if (isset($_POST['delete_product'])) {
     $delete_tags = exec_sql_query($db, "DELETE FROM tags WHERE id=".$product_id);
   }
  }
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +99,7 @@ if (isset($_POST['delete_product'])) {
 
 <!-- I have retrived the information using an SQL query. The key-value pairing is for displaying the value from the array, such as TYPE[1] - RING  -->
   <div class="content-wrapper">
-  <sidebar>
+  <sidebar class="sidebar">
     <h4>Jewelry Type</h4>
     <ul>
       <?php foreach (TYPE as $key => $value) : ?>
@@ -120,6 +121,7 @@ if (isset($_POST['delete_product'])) {
       <?php endforeach; ?>
     </ul>
 
+    <h4>Material</h4>
     <ul>
       <?php foreach (MATERIAL as $key => $value) : ?>
         <li>
@@ -130,6 +132,7 @@ if (isset($_POST['delete_product'])) {
       <?php endforeach; ?>
     </ul>
 
+    <h4>Gems</h4>
     <ul>
       <?php foreach (STONE as $key => $value) : ?>
         <li>
@@ -190,11 +193,12 @@ if (isset($_POST['delete_product'])) {
             </p>
           </div>
         </div>
-
+  <?php if (is_user_logged_in()){ ?>
         <form action="" method="POST" class="delete-form">
             <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($record['id']); ?>" />
             <button type="submit" name="delete_product" class="delete-button">Delete</button>
         </form>
+  <?php } ?>
 </div>
 
       </div>
