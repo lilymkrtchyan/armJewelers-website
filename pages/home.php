@@ -15,14 +15,6 @@ const TYPE = array(
   6 => 'Brooch'
 );
 
-const RATING = array(
-  0 => '☆☆☆☆☆',
-  1 => '★☆☆☆☆',
-  2 => '★★☆☆☆',
-  3 => '★★★☆☆',
-  4 => '★★★★☆',
-  5 => '★★★★★'
-);
 
 const SALE = array(
   1 => 'On sale!'
@@ -169,9 +161,7 @@ if($tag_type_param != NULL){
                 <?php echo htmlspecialchars('$'.$record['product_price']); ?>
               </p>
 
-              <div class="rating-stars">
-                <?php echo htmlspecialchars(RATING[$record['product_rating']]); ?>
-              </div>
+
            </div>
 
 

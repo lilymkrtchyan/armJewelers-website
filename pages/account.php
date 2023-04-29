@@ -14,7 +14,6 @@ define("MAX_FILE_SIZE", 1000000);
 if (is_user_logged_in()){
 
 
-
 $upload_feedback = array(
   'general_error' => False,
   'too_large' => False
@@ -151,6 +150,11 @@ $upload_feedback = array(
         <li><a href="/">Home</a></li>
         <li><a href="/account">Account</a></li>
       </ul>
+
+     <?php if(is_user_logged_in()){ ?>
+      <a href="<?php echo logout_url(); ?>">Log Out</a>
+    <?php } ?>
+
     </nav>
   </header>
 
@@ -158,11 +162,16 @@ $upload_feedback = array(
 
   <h1>Welcome To Your Account!</h1>
 
-  <a href="<?php echo logout_url(); ?>">Log Out</a>
 
-  <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p>
 
+
+
+  <div class="insert-form">
   <form method="post" enctype="multipart/form-data" action="/account">
+
+  <h2>Add a new product</h2>
+
+  <!-- <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p> -->
 
   <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
 
@@ -260,6 +269,7 @@ $upload_feedback = array(
 
 
       </form>
+  </div>
 
     <?php if($result){
      ?>

@@ -28,15 +28,6 @@ const TYPE = array(
   6 => 'Brooch'
 );
 
-const RATING = array(
-  0 => '☆☆☆☆☆',
-  1 => '★☆☆☆☆',
-  2 => '★★☆☆☆',
-  3 => '★★★☆☆',
-  4 => '★★★★☆',
-  5 => '★★★★★'
-);
-
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +81,7 @@ const RATING = array(
     <h2><?php echo htmlspecialchars($record['product_name']);?> </h2>
 
     <h2 class="product-price"><?php echo htmlspecialchars('$' . $record['product_price']);?></h2>
-    <h2 class="details-rating"><?php echo htmlspecialchars(RATING[$record['product_rating']]);?></h2>
+
   </div>
 
 <div class="image-description">
