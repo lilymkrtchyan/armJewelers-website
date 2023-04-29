@@ -69,16 +69,8 @@ CREATE TABLE sessions(
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
---- users table ---
--- CREATE TABLE users(
---     id INTEGER NOT NULL UNIQUE,
---     username TEXT NOT NULL,
---     user_password TEXT NOT NULL,
---     product_id INTEGER,
---     PRIMARY KEY (id AUTOINCREMENT)
---     FOREIGN KEY (product_id) REFERENCES products(id)
--- );
 
+-- ! Please ignore the table comments, it is not implemented for the project ---
 --- comments table ---
 CREATE TABLE comments(
     id INTEGER NOT NULL UNIQUE,
@@ -363,11 +355,6 @@ INSERT INTO
 VALUES
     (13, 13, 13);
 
---- Insert seed data to users ---
--- INSERT INTO
---     users (id, username, user_password, product_id)
--- VALUES
---     (1, 'lilymkrtchyan', 'lm688' , 10);
 
 --- Insert seed data into comments ---
 --- lilymkrtchyan comment to Syuniq Belt ---
