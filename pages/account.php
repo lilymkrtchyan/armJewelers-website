@@ -142,21 +142,9 @@ $upload_feedback = array(
 
 <body>
 
-<header>
-    <h1> ARMJEWELERS </h1>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/account">Account</a></li>
-      </ul>
 
-     <?php if(is_user_logged_in()){ ?>
-      <a href="<?php echo logout_url(); ?>">Log Out</a>
-    <?php } ?>
-
-    </nav>
-  </header>
+  <?php include_once("includes/header.php"); ?>
 
   <div class="account">
 
@@ -173,7 +161,6 @@ $upload_feedback = array(
 
   <h2>Add a new product</h2>
 
-  <!-- <p>If you would like to add a new product, please use the form below to do. Please provide the name of the product, the price of it, short description, what type of jewelery it is, and what is the material that it is made of.</p> -->
 
   <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
 

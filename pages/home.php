@@ -78,16 +78,9 @@ if($tag_type_param != NULL){
 <body>
 
 
-  <header>
-    <h1> ARMJEWELERS </h1>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/account">Account</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <?php include_once("includes/header.php"); ?>
 
   <div class="content-wrapper">
   <sidebar>

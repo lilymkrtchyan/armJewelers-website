@@ -98,6 +98,7 @@ a {
 
 .description-citation{
     flex-direction: column;
+    margin-left: 25px;
 }
 
 /* details */

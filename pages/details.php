@@ -43,16 +43,9 @@ const TYPE = array(
 
 <body>
 
-<header>
-    <h1> ARMJEWELERS </h1>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/account">Account</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <?php include_once("includes/header.php"); ?>
 
 <h1>Details for your product!</h1>
 
