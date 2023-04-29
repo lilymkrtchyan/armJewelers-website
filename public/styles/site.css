@@ -26,6 +26,10 @@ header{
     background-image: url("/../public/images/armo_carpet.jpg");
 }
 
+.rag-citation{
+    font-size: 10px;
+}
+
 
 /* navigation bar */
 nav {

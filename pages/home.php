@@ -43,6 +43,7 @@ $sql_all_entries = "SELECT * FROM products";
 $sql_select_clause = "SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN users ON users.id=products.jeweler_id";
 
 
+//Retrieving information from the database
 if($tag_type_param != NULL){
   $tag_type_param = intval($tag_type_param);
   $sql_select_query = $sql_select_clause . " WHERE tags.tag_type = {$tag_type_param}";
@@ -82,6 +83,7 @@ if($tag_type_param != NULL){
 
   <?php include_once("includes/header.php"); ?>
 
+<!-- I have retrived the information using an SQL query. The key-value pairing is for displaying the value from the array, such as TYPE[1] - RING  -->
   <div class="content-wrapper">
   <sidebar>
     <h4>Jewelry Type</h4>

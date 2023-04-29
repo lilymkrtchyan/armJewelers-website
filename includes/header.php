@@ -1,4 +1,10 @@
+
+<div class="rag-citation"><p>The background rag image is obtained from alamy.com</p></div>
+
 <header>
+
+
+
     <h1> ARMJEWELERS </h1>
 
     <nav>
