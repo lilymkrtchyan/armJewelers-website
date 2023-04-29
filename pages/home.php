@@ -61,7 +61,20 @@ if($tag_type_param != NULL){
   $sql_select_query = $sql_all_entries;
 }
 
+if (isset($_POST['delete_product'])) {
+  $product_id = $_POST['product_id'];
 
+
+  $delete_products = exec_sql_query($db, "DELETE FROM products WHERE id=".$product_id);
+
+  if($delete_products){
+    $delete_product_tags = exec_sql_query($db,"DELETE FROM product_tags WHERE product_id=".$product_id);
+  }
+
+  if($delete_product_tags){
+    $delete_tags = exec_sql_query($db, "DELETE FROM tags WHERE id=".$product_id);
+  }
+ }
 
 ?>
 
@@ -177,6 +190,11 @@ if($tag_type_param != NULL){
             </p>
           </div>
         </div>
+
+        <form action="" method="POST" class="delete-form">
+            <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($record['id']); ?>" />
+            <button type="submit" name="delete_product" class="delete-button">Delete</button>
+        </form>
 </div>
 
       </div>

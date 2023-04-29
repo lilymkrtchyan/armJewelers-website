@@ -105,6 +105,15 @@ a {
     margin-left: 25px;
 }
 
+
+  .delete-form {
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: end;
+    padding-right: 5px;
+    padding-bottom: 15px;
+  }
+
 /* details */
 .details-name-price{
     display: flex;
