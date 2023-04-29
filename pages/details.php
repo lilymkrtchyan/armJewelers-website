@@ -1,8 +1,6 @@
 
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 //include_once('includes/db.php');
 
@@ -55,10 +53,6 @@ const TYPE = array(
     $id = $_GET['id'];
 
     // query DB
-
-    // $result = exec_sql_query($db, "SELECT * FROM products");
-
-    // $result -> fetchAll();
 
 
 

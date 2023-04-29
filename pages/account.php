@@ -1,13 +1,11 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 if ($error = error_get_last()) {
   echo "Error: " . $error['message'];
 }
 
-//$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+
 
 define("MAX_FILE_SIZE", 1000000);
 
@@ -207,7 +205,7 @@ $upload_feedback = array(
             </div>
             <div>
               <input type="radio" id="broch" name="type" value=6>
-              <label for="brooch">Brooch</label>
+              <label for="broch">Brooch</label>
             </div>
           </div>
 
@@ -239,10 +237,10 @@ $upload_feedback = array(
 
             <div >
               <input type="radio" id="imzardy" name="jeweler" value=1>
-              <label for="yes">Im Zardy</label>
+              <label for="imzardy">Im Zardy</label>
             <div>
               <input type="radio" id="handmade" name="jeweler" value=2 >
-              <label for="no">Protest Handmade</label>
+              <label for="handmade">Protest Handmade</label>
             </div>
           </div>
 

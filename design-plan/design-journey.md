@@ -381,13 +381,38 @@ FOREIGN KEY (user_id) REFERENCES users(id)
 Plan a query:
 
 SELECT * products INNER JOIN product_tags ON (product_tags.product_id = products.id) INNER JOIN tags ON (product_tags.tag_id = tags.id)
+
+SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN users ON users.id=products.jeweler_id;
 ```
 
 ```
-TODO: Plan another query
-```
+Plan another query:
 
-TODO: ...
+SELECT * FROM products;
+```
+SELECT * FROM products INNER JOIN product_tags ON products.id = product_tags.product_id INNER JOIN tags ON product_tags.tag_id = tags.id INNER JOIN users ON users.id=products.jeweler_id WHERE products.id=".$id;
+
+INSERT INTO products (product_name, product_description, product_price, image_name, image_extension, image_path, jeweler_id) VALUES (:productname, :productdescription, :productprice, :imagename, :imageext, :imagepath, :jeweler);", array(':productname' => $product_name,
+                ':productdescription' => $product_description,
+                ':productprice' => $product_price,
+                ':imagename' => $upload_file_name,
+                ':imageext' => $upload_file_ext,
+                ':imagepath' => $upload_source,
+                ':jeweler' => $jeweler
+            );
+
+INSERT INTO tags (tag_type, stone, sale, material) VALUES (:tagtype, :stone, :sale, :material);", array(':tagtype' => $type, ':stone' => $gem, ':sale' => $sale, ':material' => $material);
+
+INSERT INTO product_tags (product_id, tag_id) VALUES (:productid, :tagid);", array(
+                ':productid' => $record_id,
+                ':tagid' => $tag_id
+            );
+
+UPDATE products SET image_path = :imagepath WHERE id = :recordid;", array(
+        ':imagepath' => $upload_storage_path,
+        ':recordid' => $record_id
+    );
+
 
 
 ## Complete & Polished Website (Final Submission)
@@ -396,7 +421,15 @@ TODO: ...
 > Tell us what issues you discovered during your accessibility audit.
 > What do you do to improve the accessibility of your site?
 
-TODO: audit fixes
+audit fixes:
+
+The WAVE audit indicated that I have "empty links" when I link the product from the home page to its details page and the user needs to click on the product tumbnail. I couldn't identify how to fix this issue since the link was not supposed to be linked to a specific text (hence the text part is empty), but rather the whole tumbnail.
+
+The font-size for the citation text for the background rag image for the header was indicated to be too small, hence I enlarged the text.
+
+For the product insert form, the audit indicated that my "Brooch" entry had a missing label and there was an abondened label. I mispelled the word brooch, hence the "id" and "for" attributes were not connected. I corrected this issue by correcting the spelling.
+
+The same label issue existed for "Who's the jeweler" entry, which I have also corrected.
 
 
 ### Self-Reflection (Final Submission)
