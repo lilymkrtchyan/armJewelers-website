@@ -148,3 +148,24 @@ a {
     color: black;
     padding-top: 5px;
  }
+
+ .login-form {
+    padding-top: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    margin-top: 150px;
+  }
+
+  .login-form .align-right, .login-form .label-input{
+    margin-top: 7px;
+  }
+
+  .login-form .login .feedback{
+    color:rgb(198, 21, 21);
+  }

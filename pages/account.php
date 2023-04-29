@@ -158,9 +158,11 @@ $upload_feedback = array(
     </nav>
   </header>
 
+  <div class="account">
+
   <?php if (is_user_logged_in()) { ?>
 
-  <h1>Welcome To Your Account!</h1>
+    <h1>Welcome To Your Account!</h1>
 
 
 
@@ -278,13 +280,17 @@ $upload_feedback = array(
 
   <?php } else { ?>
 
-  <p>Please sign in to access your account!</p>
 
+
+<div class="login-form">
 <h2>Sign In</h2>
+
+<p>Please sign in to access your account!</p>
 
 <?php echo login_form($_SERVER['REQUEST_URI'], $session_messages);
  }?>
-
+</div>
+</div>
 </body>
 
 </html>
