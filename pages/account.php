@@ -249,7 +249,7 @@ $upload_feedback = array(
           <label for="product-image">Add an Image (max 10MB)</label>
           <input type="file" name="product-image" id="product-image" />
 
-        <div >
+        <div class="submit-button">
           <input type="submit" value="Add New Product" name="add-product" />
         </div>
 
