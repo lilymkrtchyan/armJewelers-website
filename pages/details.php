@@ -92,6 +92,8 @@ const TYPE = array(
     <h3>Description:</h3>
 
     <p><?php echo htmlspecialchars($record['product_description']);?></p>
+    <p><?php echo htmlspecialchars($record['citation']);?></p>
+
     <h3>Jeweler: <?php echo htmlspecialchars(JEWELER[$record['jeweler_id']]); ?></h3>
     <p><?php echo htmlspecialchars($record['jeweler_description']); ?></p>
 

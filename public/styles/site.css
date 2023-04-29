@@ -96,6 +96,10 @@ a {
     text-decoration: none;
 }
 
+.description-citation{
+    flex-direction: column;
+}
+
 /* details */
 .details-name-price{
     display: flex;

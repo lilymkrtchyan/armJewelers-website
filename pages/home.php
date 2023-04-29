@@ -169,12 +169,20 @@ if($tag_type_param != NULL){
 
           <img src='/<?php echo htmlspecialchars($record['image_path']); ?>' alt="Product image">
 
+        <div class="description-citation">
           <div class="product-descriptions">
             <p>
               <?php echo htmlspecialchars($record['product_description']); ?>
             </p>
           </div>
+
+          <div>
+            <p>
+              <?php echo htmlspecialchars($record['citation']); ?>
+            </p>
+          </div>
         </div>
+</div>
 
       </div>
 
