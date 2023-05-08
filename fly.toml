@@ -1,0 +1,6 @@
+app = "Lili-Mkrtchyan-ArmJewelers"
+primary_region = "ewr"
+
+[http_service]
+  internal_port = 80
+  force_https = true
